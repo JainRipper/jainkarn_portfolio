@@ -37,15 +37,16 @@ const NAV_ITEMS: Array<NavItem> = [
   },
 ]
 
-function Navbar() {
-  // const { systemTheme, theme, setTheme } = useTheme()
-  // const currentTheme = theme === "system" ? systemTheme : theme
+const Navbar = () => {
+//   const { systemTheme, theme, setTheme } = useTheme()
+//   const currentTheme = theme === "system" ? systemTheme : theme
   // const pathname = usePathname()
   // const [navbar, setNavbar] = useState(false)
 
 	const [showMenu, setShowMenu] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 	const [activeTheme, setTheme] = useThemeSwitcher();
+	console.log(activeTheme);
 
   function toggleMenu() {
 		if (!showMenu) {
@@ -148,7 +149,7 @@ function Navbar() {
 								alt="Dark Logo" width={150} height={120} />
 						) : (
 							<Image src={logoLight} className="w-36 cursor-pointer"
-								alt="Dark Logo" width={150} height={120} />
+								alt="Light Logo" width={150} height={120} />
 						)}
 					</Link>
 				</div>

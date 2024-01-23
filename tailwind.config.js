@@ -11,7 +11,25 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: { sm: "480px", md: "768px", lg: "976px", xl: "1440pd" },
+      fontFamily: {
+        archivo: ["Archivo", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
+      colors: {
+				// Light colors
+				'primary-light': '#F7F8FC',
+				'secondary-light': '#FFFFFF',
+				'ternary-light': '#f6f7f8',
+
+				// Dark colors
+				'primary-dark': '#0D2438',
+				'secondary-dark': '#102D44',
+				'ternary-dark': '#1E3851',
+
+				// Extended v3 color
+				// gray: colors.neutral,
+			},
+      screens: { sm: "600px", md: "768px", lg: "976px", xl: "1440pd" },
       animation: {
         fadeIn: "fadeIn 1.5s",
         bounce:

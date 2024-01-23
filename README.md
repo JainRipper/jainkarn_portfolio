@@ -16,3 +16,10 @@ Can run the application in VS Code or a terminal and it will be available at `ht
 npm install
 npm run dev
 ```
+
+<!-- TO DO -->
+- organize tailwind class - prettier
+- reusable component: buttons, links, ...
+- default color from tailwind config
+- highlight navbar link while at that ID
+- dark mode: fix text color

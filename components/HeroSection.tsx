@@ -20,7 +20,7 @@ const HeroSection = () => {
   return (
     <motion.section id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 		transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-		className="flex flex-col sm:justify-between items-center sm:flex-row mt-6 md:mt-20 md:mx-10" >
+		className="flex flex-col sm:justify-between items-center sm:flex-row mt-6 md:mt-20 container mx-auto px-28 pb-20" >
 			<div className="w-full md:w-1/2 text-left">
 				<motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 					transition={{
@@ -61,7 +61,7 @@ const HeroSection = () => {
 							Let's Start
 						</Link>
 					</div>
-					<a download="Stoman-Resume.pdf" href="/files/Stoman-Resume.pdf"
+					<a download="Jainkarn-Resume.pdf" href="/files/Jainkarn-Resume.pdf"
 						className="ml-5 font-inter text-base flex justify-center items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-4 duration-500 focus:ring-1 focus:ring-slate-600"
 						aria-label="Download Resume" >
 						<FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 h-5 w-5 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
@@ -76,8 +76,8 @@ const HeroSection = () => {
 				className="w-full sm:w-1/2 text-right mt-8 sm:mt-0" >				
 				<picture className="float-right">
 					<ThemedImage
-						imgLight='/headshot-light.png'
-						imgDark='/headshot-dark.png'
+						imgLight='/images/headshot-light.png'
+						imgDark='/images/headshot-dark.png'
 						alt="My image"
 						width={420}
 						height={420}

@@ -10,8 +10,8 @@ import { motion } from 'framer-motion';
 import { FiSun, FiMoon, FiX, FiMenu } from 'react-icons/fi';
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import ContactUsModal from '../ContactUsModal';
-import logoLight from '../../public/img/logo-light.svg';
-import logoDark from '../../public/img/logo-dark.svg';
+import logoLight from '../../public/icons/logo-light.svg';
+import logoDark from '../../public/icons/logo-dark.svg';
 import userData from "../../constants/data";
 import ThemedBtn from '../reusable/ThemedBtn';
 
@@ -61,17 +61,17 @@ const Navbar = () => {
 	}
 
   return (
-    <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="nav" className="sm:container sm:mx-auto" >
+    <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="nav" className="container mx-auto px-28" >
 		{/* Header */}
 		<div className="z-10 xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6">
 			{/* Header menu links and small screen hamburger menu */}
 			<div className="flex justify-between items-center px-4 sm:px-0">
 					<Link to="home">
 						{theme === 'dark' ? (
-							<Image src={logoDark} className="w-36 cursor-pointer"
+							<Image src={logoDark} className="w-36 cursor-pointer duration-300 hover:translate-x-1"
 								alt="Dark Logo" width={150} height={120} />
 						) : (
-							<Image src={logoLight} className="w-36 cursor-pointer"
+							<Image src={logoLight} className="w-36 cursor-pointer duration-300 hover:translate-x-1"
 								alt="Light Logo" width={150} height={120} />
 						)}
 					</Link>
@@ -133,19 +133,19 @@ const Navbar = () => {
 
 			{/* Header links large screen */}
 			<div className="text-md font-inter hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
-				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2" 
+				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light cursor-pointer sm:mx-4 mb-2 sm:py-2" 
 					aria-label="Home" >
 					<Link to="home">Home</Link>
 				</div>
-				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2" 
+				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light cursor-pointer sm:mx-4 mb-2 sm:py-2" 
 					aria-label="Services" >
 					<Link to="services">Services</Link>
 				</div>
-				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light cursor-pointer sm:mx-4 mb-2 sm:py-2"
 					aria-label="Skills" >
 					<Link to="skills">Skills</Link>
 				</div>
-				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light cursor-pointer sm:mx-4 mb-2 sm:py-2"
 					aria-label="Portfolio" >
 					<Link to="portfolio">Portfolio</Link>
 				</div>

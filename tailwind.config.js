@@ -28,6 +28,11 @@ module.exports = {
 
 				// Extended v3 color
 				// gray: colors.neutral,
+
+        // Customer color
+        'custom-green':'#C4D39C',
+        'custom-blue':'#9BD3D0',
+        'custom-red':'#FECCB5',
 			},
       screens: { sm: "600px", md: "768px", lg: "976px", xl: "1440pd" },
       animation: {

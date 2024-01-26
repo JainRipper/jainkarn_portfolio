@@ -55,7 +55,7 @@ export default function ContainerBlock({ children, ...customMeta }: Props) {
           <meta property="article:published_time" content={meta.date} />
         )} */}
       </Head>
-      <main className="container mx-auto max-w-3xl px-4 md:max-w-7xl">
+      <main className="mx-auto">
         <Navbar />
         <div>{children}</div>
         <Footer />

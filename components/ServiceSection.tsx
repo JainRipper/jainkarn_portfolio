@@ -3,6 +3,8 @@ import Image from "next/image";
 import { motion } from 'framer-motion';
 import { MdArrowOutward } from "react-icons/md";
 import iconFrontEnd from '../public/icons/services-frontend_engineer.svg';
+import iconWebDev from '../public/icons/services-web_developer.svg';
+import iconSoftEng from '../public/icons/services-software_engineer.svg';
 
 const skills = [
   { skill: "HTML" },
@@ -24,7 +26,7 @@ const ServicesSection = () => {
 		  transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
 		  className="py-20 items-center container mx-auto px-28 bg-white" 
     >
-      <div className="pb-16 sm:flex sm:justify-between sm:items-center container mx-auto bg-white" >
+      <div className="pb-16 sm:flex sm:justify-between sm:items-center container mx-auto" >
         {/* Intro */}
         <div className="w-full md:w-1/2 text-left">
           <h1 className="font-archivo font-bold text-2xl md:w-3/4 lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
@@ -39,7 +41,7 @@ const ServicesSection = () => {
           <div className="m-0 sm:ml-4 sm:flex p-5 sm:p-0 justify-center items-center float-right">
             <div className="sm:flex-col ml-10">
               <h1 className="font-archivo font-bold text-2xl md:w-3/4 lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
-                230+
+                30+
               </h1>
               <p className="font-general-medium mt-4 text-base md:text-lg sm:text-left leading-normal text-gray-500 dark:text-gray-200" >
               Project Complete
@@ -55,7 +57,7 @@ const ServicesSection = () => {
             </div>
             <div className="sm:flex-col ml-10">
               <h1 className="font-archivo font-bold text-2xl md:w-3/4 lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
-                20+
+                10+
               </h1>
               <p className="font-general-medium mt-4 text-base md:text-lg sm:text-left leading-normal text-gray-500 dark:text-gray-200" >
                 Years Experience
@@ -71,7 +73,7 @@ const ServicesSection = () => {
           <div className="flex h-full dark:bg-gray-800 p-6 flex-col text-base font-inter border border-black bg-custom-green hover:bg-lime-600 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded-lg duration-500 focus:ring-1 focus:ring-slate-600">
             <div className="flex items-center pb-16">
               <Image src={iconFrontEnd} className="w-14"
-								alt="Light Logo" width={150} height={150} />
+								alt="Frontend Engineer" width={150} height={150} />
             </div>
             <div className="flex flex-col justify-between flex-grow">
               <p className="text-2xl font-bold pb-4 dark:text-gray-300">
@@ -96,8 +98,8 @@ const ServicesSection = () => {
         <div className="p-4 max-w-sm duration-300 hover:-translate-y-1">
           <div className="flex h-full dark:bg-gray-800 p-6 flex-col text-base font-inter border border-black bg-custom-blue hover:bg-cyan-600 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded-lg duration-500 focus:ring-1 focus:ring-slate-600">
             <div className="flex items-center pb-16">
-              <Image src={iconFrontEnd} className="w-14"
-								alt="Light Logo" width={150} height={150} />
+              <Image src={iconWebDev} className="w-14"
+								alt="Web Developer" width={150} height={150} />
             </div>
             <div className="flex flex-col justify-between flex-grow">
               <p className="text-2xl font-bold pb-4 dark:text-gray-300">
@@ -122,8 +124,8 @@ const ServicesSection = () => {
         <div className="p-4 max-w-sm duration-300 hover:-translate-y-1">
           <div className="flex h-full dark:bg-gray-800 p-6 flex-col text-base font-inter border border-black bg-custom-red hover:bg-red-400 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded-lg duration-500 focus:ring-1 focus:ring-slate-600">
             <div className="flex items-center pb-16">
-              <Image src={iconFrontEnd} className="w-14"
-								alt="Light Logo" width={150} height={150} />
+              <Image src={iconSoftEng} className="w-14"
+								alt="Software Engineer" width={150} height={150} />
             </div>
             <div className="flex flex-col justify-between flex-grow">
               <p className="text-2xl font-bold pb-4 dark:text-gray-300">

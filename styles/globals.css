@@ -63,3 +63,38 @@ a {
 		opacity: 0.5;
 	}
 }
+
+/* Carousel */
+.carouselContainer {
+	width: 1245px;
+	height: auto;
+	display: flex;
+	justify-content: center;
+}
+.carouselArea > .carouselPosts {
+	position: relative;
+	transition: 0.5s;
+}
+.carouselPostBox {
+	box-sizing: border-box;
+}
+.carouselPostBox > .cover {
+	width: 100%;
+	height: 100%;
+	transition: 0.5s 0s;
+	background-position: center, center;
+	background-size: cover;
+}
+.carouselPostBox > .cover:hover {
+	transform: scale(1.1);
+}
+.controlLeft, .controlRight {
+	transition: 0.5s 0s;
+	transform: translateY(-50%);
+}
+.cardBox .imageStyle {
+	transition: 0.5s 0s;
+}
+.cardBox .fontBox {
+	width: calc(100% - 100px - 5px);
+}

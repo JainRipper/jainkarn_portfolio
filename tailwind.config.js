@@ -1,4 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
+
+const backfaceVisibility = plugin(function({addUtilities}) {
+  addUtilities({
+    '.backface-visible': {
+      'backface-visibility': 'visible',
+    },
+    '.backface-hidden': {
+      'backface-visibility': 'hidden',
+    }
+  })
+});
+
 module.exports = {
   darkMode: "class",
   content: [
@@ -35,7 +48,11 @@ module.exports = {
         'custom-red':'#FECCB5',
         // 'custom-green':'#C4D39C',
         // 'custom-blue':'#9BD3D0',
-			},
+			}, 
+      backgroundImage: {
+        'fortfolio-project': "url('/images/project.svg')",
+        // 'footer-texture': "url('/img/footer-texture.png')",
+      },
       screens: { sm: "600px", md: "768px", lg: "976px", xl: "1440pd" },
       animation: {
         fadeIn: "fadeIn 1.5s",
@@ -67,5 +84,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [backfaceVisibility],
 }

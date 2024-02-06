@@ -24,6 +24,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/ContactUsModal.jsx", "components/reusable/Button.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/ContactUsModal.jsx", "components/reusable/Button.jsx", "components/reusable/Carousel.js"],
   "exclude": ["node_modules"]
 }

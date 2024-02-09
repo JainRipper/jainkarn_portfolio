@@ -23,3 +23,6 @@ npm run dev
 - default color from tailwind config
 - highlight navbar link while at that ID
 - dark mode: fix text color
+- write comment
+- hover text: title="mammals"
+- add animation

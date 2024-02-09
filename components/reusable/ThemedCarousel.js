@@ -58,10 +58,10 @@ const ThemedCarousel = (props) => {
         </div>
       </div>
       
-        <div onClick={()=> changeImagePosition(-2)} className="controlLeft left-[35rem] top-60 absolute w-10 h-10 cursor-pointer">
+        <div onClick={()=> changeImagePosition(-2)} className="controlLeft left-[35rem] top-[17rem] absolute w-10 h-10 cursor-pointer">
           <Image src={btnBack} className="w-14"alt="Frontend Engineer" width={150} height={150} />
         </div>
-        <div onClick={()=> changeImagePosition(2)} className="controlRight right-[35rem] top-60 absolute w-10 h-10 cursor-pointer">
+        <div onClick={()=> changeImagePosition(2)} className="controlRight right-[35rem] top-[17rem] absolute w-10 h-10 cursor-pointer">
           <Image src={btnNext} className="w-14"alt="Frontend Engineer" width={150} height={150} />
         </div>
       </div>

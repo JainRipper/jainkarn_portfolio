@@ -110,7 +110,7 @@ const PortfolioSection = () => {
   return (
     <motion.section id="portfolio" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 		  transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-		  className="py-20 items-center container mx-auto px-28" 
+		  className="pt-15 pb-28 items-center container mx-auto px-28" 
     >
       <div className="py-16 sm:flex-col text-center sm:justify-center sm:items-center container mx-auto" >
         {/* Intro */}
@@ -122,7 +122,7 @@ const PortfolioSection = () => {
         </p>        
       </div>
 
-      <div className="flex-col flex justify-center items-center">
+      <div className="flex-col flex justify-center items-center pb-20">
         <div className="max-w-sm w-full lg:max-w-7xl lg:flex mb-12">
           <div className="h-96 lg:w-1/2 flex-none bg-cover border-r-0 rounded-l-lg text-center overflow-hidden bg-[url('/images/project.svg')]"  
           title="Woman holding a mug">
@@ -209,9 +209,11 @@ const PortfolioSection = () => {
             See More Project
 					</Link>
 				</div>
+      </div>
 
-        {/* Testimonial */}
-        <div className="pb-16 pt-52 sm:flex-col text-center sm:justify-center sm:items-center container mx-auto" >
+      {/* Testimonial */}
+      <div className="flex-col flex justify-center items-center pb-16 pt-20">
+        <div className="sm:flex-col text-center sm:justify-center sm:items-center container mx-auto mb-14" >
           <h1 className="font-archivo font-bold text-2xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
             Testimonial
           </h1>
@@ -231,9 +233,7 @@ const PortfolioSection = () => {
             {renderChildrenView}
           </ThemedCarousel>
         </React.Fragment>
-
-      </div>
-      
+      </div>      
 
     </motion.section>
   )

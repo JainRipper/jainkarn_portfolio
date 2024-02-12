@@ -16,15 +16,8 @@ import userData from "../../constants/data";
 import ThemedBtn from '../reusable/ThemedBtn';
 
 const Navbar = () => {
-//   const { systemTheme, theme, setTheme } = useTheme()
-//   const currentTheme = theme === "system" ? systemTheme : theme
-  // const pathname = usePathname()
-  // const [navbar, setNavbar] = useState(false)
-
 	const [showMenu, setShowMenu] = useState(false);
 	const [showModal, setShowModal] = useState(false);
-	// const [activeTheme, setTheme] = useThemeSwitcher();
-	// console.log(activeTheme);
 	
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);

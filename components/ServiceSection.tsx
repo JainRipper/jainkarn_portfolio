@@ -1,5 +1,10 @@
-import React from "react"
-import Image from "next/image"
+import React from "react";
+import Image from "next/image";
+import { motion } from 'framer-motion';
+import { MdArrowOutward } from "react-icons/md";
+import iconFrontEnd from '../public/icons/services-frontend_engineer.svg';
+import iconWebDev from '../public/icons/services-web_developer.svg';
+import iconSoftEng from '../public/icons/services-software_engineer.svg';
 
 const skills = [
   { skill: "HTML" },
@@ -17,39 +22,132 @@ const skills = [
 
 const ServicesSection = () => {
   return (
-    <section id="services">
-      <div className="my-12 pb-12 md:pt-16 md:pb-48">
-        <h1 className="text-center font-bold text-4xl">
-          Services
-          <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
-        </h1>
-
-        <div className="flex flex-col space-y-10 items-stretch justify-center align-top md:space-x-10 md:space-y-0 md:p-4 md:flex-row md:text-left">
-          <div className="text-center md:w-1/2 md:text-left">
-            <h1 className="text-2xl font-bold mb-6">My Skills</h1>
-            <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start">
-              {skills.map((item, idx) => {
-                return (
-                  <p
-                    key={idx}
-                    className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold"
-                  >
-                    {item.skill}
-                  </p>
-                )
-              })}
+    <motion.section id="services" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+		  transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
+		  className="py-20 items-center container mx-auto px-28 bg-white" 
+    >
+      <div className="pb-16 sm:flex sm:justify-between sm:items-center container mx-auto" >
+        {/* Intro */}
+        <div className="w-full md:w-1/2 text-left">
+          <h1 className="font-archivo font-bold text-2xl md:w-3/4 lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
+              What I Can Do For Your Needs
+          </h1>
+          <p className="mt-4 text-base md:text-lg sm:text-left md:w-3/4 leading-normal text-gray-500 dark:text-gray-200" >
+            Discover Tailored Solutions to Fulfill Your Unique Needs – Your Project, My Expertise.
+          </p>
+        </div>
+        {/* Achievement */}
+        <div className="w-full md:w-1/2 text-right">
+          <div className="m-0 sm:ml-4 sm:flex p-5 sm:p-0 justify-center items-center float-right">
+            <div className="sm:flex-col ml-10">
+              <h1 className="font-archivo font-bold text-2xl md:w-3/4 lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
+                30+
+              </h1>
+              <p className="font-general-medium mt-4 text-base md:text-lg sm:text-left leading-normal text-gray-500 dark:text-gray-200" >
+              Project Complete
+              </p>              
             </div>
-            <Image
-              src="/hero-image.png"
-              alt=""
-              width={325}
-              height={325}
-              className="hidden md:block md:relative md:bottom-4 md:left-32 md:z-0"
-            />
+            <div className="sm:flex-col ml-10">
+              <h1 className="font-archivo font-bold text-2xl md:w-3/4 lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
+                4+
+              </h1>
+              <p className="font-general-medium mt-4 text-base md:text-lg sm:text-left leading-normal text-gray-500 dark:text-gray-200" >
+              Work Contract
+              </p>              
+            </div>
+            <div className="sm:flex-col ml-10">
+              <h1 className="font-archivo font-bold text-2xl md:w-3/4 lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
+                10+
+              </h1>
+              <p className="font-general-medium mt-4 text-base md:text-lg sm:text-left leading-normal text-gray-500 dark:text-gray-200" >
+                Years Experience
+              </p>              
+            </div>
           </div>
         </div>
       </div>
-    </section>
+
+      <div className="flex flex-wrap justify-center">
+        {/* Frontend Engineer */}
+        <div className="p-4 max-w-sm duration-300 hover:-translate-y-1">
+          <div className="flex h-full dark:bg-gray-800 p-6 flex-col text-base font-inter border border-black bg-custom-green hover:bg-lime-600 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded-lg duration-500 focus:ring-1 focus:ring-slate-600">
+            <div className="flex items-center pb-16">
+              <Image src={iconFrontEnd} className="w-14"
+								alt="Frontend Engineer" width={150} height={150} />
+            </div>
+            <div className="flex flex-col justify-between flex-grow">
+              <p className="text-2xl font-bold pb-4 dark:text-gray-300">
+                Frontend Engineer
+              </p>
+              <p className="text-base pb-5 dark:text-gray-300">
+                Enhance user experiences through my expertise in frontend engineering. Elevate your web presence with innovation and precision.
+              </p>
+              <a href=""
+                className="font-inter text-base w-1/2 flex justify-between items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600"
+                aria-label="Download Resume" >
+                <span className="text-sm sm:text-lg duration-100">
+                  Contact Us
+                </span>
+                <MdArrowOutward className="ml-0 sm:ml-1 mr-2 h-5 w-5 sn:w-6 sm:h-6 duration-100"></MdArrowOutward>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Web Developer */}
+        <div className="p-4 max-w-sm duration-300 hover:-translate-y-1">
+          <div className="flex h-full dark:bg-gray-800 p-6 flex-col text-base font-inter border border-black bg-custom-blue hover:bg-cyan-600 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded-lg duration-500 focus:ring-1 focus:ring-slate-600">
+            <div className="flex items-center pb-16">
+              <Image src={iconWebDev} className="w-14"
+								alt="Web Developer" width={150} height={150} />
+            </div>
+            <div className="flex flex-col justify-between flex-grow">
+              <p className="text-2xl font-bold pb-4 dark:text-gray-300">
+                Web Developer
+              </p>
+              <p className="text-base pb-5 dark:text-gray-300">
+                Rafting responsive, dynamic websites with precision. Elevate your digital presence through my expertise in innovative and scalable web development.
+              </p>
+              <a href=""
+                className="font-inter text-base w-1/2 flex justify-between items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600"
+                aria-label="Download Resume" >
+                <span className="text-sm sm:text-lg duration-100">
+                  Contact Us
+                </span>
+                <MdArrowOutward className="ml-0 sm:ml-1 mr-2 h-5 w-5 sn:w-6 sm:h-6 duration-100"></MdArrowOutward>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        {/* Software Engineer */}
+        <div className="p-4 max-w-sm duration-300 hover:-translate-y-1">
+          <div className="flex h-full dark:bg-gray-800 p-6 flex-col text-base font-inter border border-black bg-custom-red hover:bg-red-400 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded-lg duration-500 focus:ring-1 focus:ring-slate-600">
+            <div className="flex items-center pb-16">
+              <Image src={iconSoftEng} className="w-14"
+								alt="Software Engineer" width={150} height={150} />
+            </div>
+            <div className="flex flex-col justify-between flex-grow">
+              <p className="text-2xl font-bold pb-4 dark:text-gray-300">
+                Software Engineer
+              </p>
+              <p className="text-base pb-5 dark:text-gray-300">
+                Engineer seamless software solutions. Transforming concepts into highperformance applications with precision and innovation.
+              </p>
+              <a href=""
+                className="font-inter text-base w-1/2 flex justify-between items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600"
+                aria-label="Download Resume" >
+                <span className="text-sm sm:text-lg duration-100">
+                  Contact Us
+                </span>
+                <MdArrowOutward className="ml-0 sm:ml-1 mr-2 h-5 w-5 sn:w-6 sm:h-6 duration-100"></MdArrowOutward>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </motion.section>
   )
 }
 

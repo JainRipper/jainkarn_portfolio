@@ -1,12 +1,13 @@
 # Tailwind CSS and Next.js Portfolio
 
-This is a template for creating a portfolio with Tailwind CSS and Next.js.
+Jaikarn portfolio using Tailwind CSS and Next.js.
 
 ![Portfolio Demo](demo/demo.gif)
 
-## How it works
+## Features
 
-Fork or download the repo and change whatever you need to change for your needs.
+- Dark mode (In Progress...)
+- Responsive view (In Progress...)
 
 ## Running Locally
 
@@ -16,3 +17,13 @@ Can run the application in VS Code or a terminal and it will be available at `ht
 npm install
 npm run dev
 ```
+
+<!-- TO DO -->
+- organize tailwind class - prettier        [Done]
+- reusable component: buttons, links, ...
+- default color from tailwind config
+- highlight navbar link while at that ID
+- dark mode: fix text color
+- write comment
+- hover text: title="mammals"
+- add animation

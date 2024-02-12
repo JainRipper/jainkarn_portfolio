@@ -1,3 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+	primary-btn: bg-amber-400 hover:bg-amber-500
+	heading-font: font-archivo
+	primary-font: font-inter
+ */
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Inter', 'sans-serif';
+}
+
+.light body {
+	background: #FFF6ED;
+}
+
+.dark body {
+	color: #fff;
+	background: #0D2438;
+}
+
+footer {
+	background: #0D2438;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Scroll to top style */
+.scrollToTop {
+	@apply bg-indigo-600;
+	@apply text-white;
+	position: fixed;
+	width: 100%;
+	align-items: center;
+	height: 20px;
+	justify-content: center;
+	z-index: 999;
+	cursor: pointer;
+	animation: fadeIn 0.3s;
+	transition: opacity 0.4s;
+	opacity: 1;
+}
+
+.scrollToTop:hover {
+	opacity: 1;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}
+
+/* Carousel */
+.carouselContainer {
+	width: 1245px;
+	height: auto;
+	display: flex;
+	justify-content: center;
+}
+.carouselArea > .carouselPosts {
+	position: relative;
+	transition: 0.5s;
+}
+.carouselPostBox {
+	box-sizing: border-box;
+}
+.carouselPostBox > .cover {
+	width: 100%;
+	height: 100%;
+	transition: 0.5s 0s;
+	background-position: center, center;
+	background-size: cover;
+}
+.carouselPostBox > .cover:hover {
+	transform: scale(1.1);
+}
+.controlLeft, .controlRight {
+	transition: 0.5s 0s;
+	transform: translateY(-50%);
+}
+.cardBox .imageStyle {
+	transition: 0.5s 0s;
+}
+.cardBox .fontBox {
+	width: calc(100% - 100px - 5px);
+}

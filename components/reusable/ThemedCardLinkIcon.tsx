@@ -1,9 +1,6 @@
 import React from 'react';
 import Image from "next/image";
 import { MdArrowOutward } from "react-icons/md";
-import iconFrontEnd from '../../public/icons/services-frontend_engineer.svg';
-import iconWebDev from '../../public/icons/services-web_developer.svg';
-import iconSoftEng from '../../public/icons/services-software_engineer.svg';
 
 interface Props {
 	service: string;

@@ -7,11 +7,11 @@ import { Link } from "react-scroll/modules"
 import ThemedImage from './reusable/ThemedImage';
 
 const HeroSection = () => {
-//   const { systemTheme, theme, setTheme } = useTheme()
-//   const [ activeTheme ] = useThemeSwitcher();
-//   console.log(activeTheme);
-//   const { systemTheme, theme, setTheme } = useTheme()
-//   const currentTheme = theme === "system" ? systemTheme : theme
+  const data = {
+	intro: "Hi,  my name is JainKarn.",
+	duties: "I'm a Frontend Engineer & Web Developer...",
+	passion: "Front-end and Web development satisfy my need for creativity. This channel enables me to easily put my ideas into digital form and get results back really quick."
+  }
 
   return (
     <motion.section id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
@@ -25,7 +25,7 @@ const HeroSection = () => {
 					delay: 0.1,
 				}}
 				className="font-general-medium mb-4 text-base md:text-lg sm:text-left leading-normal text-gray-500 dark:text-gray-200" >
-				Hi,  my name is JainKarn.
+				{data.intro}
 			</motion.p>
 			<motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 				transition={{
@@ -34,7 +34,7 @@ const HeroSection = () => {
 					delay: 0.2,
 				}}
 				className="font-archivo font-bold text-2xl md:w-3/4 lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
-				I'm a Frontend Engineer & Web Developer..
+				{data.duties}
 			</motion.h1>
 			<motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 				transition={{
@@ -43,7 +43,7 @@ const HeroSection = () => {
 					delay: 0.1,
 				}}
 				className="font-general-medium mt-4 text-base md:text-lg sm:text-left leading-normal text-gray-500 dark:text-gray-200" >
-				Front-end and Web development satisfy my need for creativity. This channel enables me to easily put my ideas into digital form and get results back really quick.
+				{data.passion}
 			</motion.p>
 			<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 				transition={{

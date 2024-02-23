@@ -14,6 +14,28 @@ import iconEmail from '../../public/icons/footer-email.svg'
 import iconPhone from '../../public/icons/footer-phone.svg';
 import logoDark from '../../public/icons/logo-dark.svg';
 
+const footer = {
+  intro: {
+    title: "Tell Me About Your Project",
+    details: "Share your project details, goals, and vision. Let s collaborate to shape a customized solution that aligns with your objectives and aspirations for success"
+  },
+  contacts: [
+    {
+      channel: "Email",
+      details: "jainkarn.p@gmail.com",
+      icon: iconEmail
+    },
+    {
+      channel: "Phone",
+      details: "(+61) 403260xxx",
+      icon: iconPhone
+    }
+  ],
+  social_medias: [
+
+  ]
+}
+
 const Footer = () => {
   return (
     <footer className="mx-auto pt-20 px-28 items-center container ">
@@ -22,58 +44,48 @@ const Footer = () => {
         <div className="w-full md:w-1/2 text-left">
           <div className="">
             <h1 className="font-archivo font-bold text-3xl sm:text-left text-primary-light dark:text-ternary-dark" >
-              Tell Me About Your Project
+              {footer.intro.title}
             </h1>
             <p className="mt-4 text-base md:text-lg sm:text-left leading-normal text-primary-light dark:text-ternary-dark" >
-              Share your project details, goals, and vision. Let s collaborate to shape a customized solution that aligns with your objectives and aspirations for success
+              {footer.intro.details}
             </p>
           </div>
 
-          {/* Skills set */}
+          {/* Contacts */}
           <div className="md:flex flex-wrap py-10">
-            <div className="sm:w-full md:w-1/2">
-              <div className="flex items-center text-black duration-500 focus:ring-1 focus:ring-slate-600 relative">
-                <Image src={iconEmail} className="w-10" 
-                  alt="Frontend Engineer" width={150} height={150} />
-                <div className="flex flex-col justify-center">
-                  <span className="text-sm sm:text-base text-white duration-100 pl-4">
-                    Email
-                  </span>   
-                  <a href="/files/Jainkarn-Resume.pdf">
+            { footer.contacts.map((contact: any, i: number) => (
+              <div className="sm:w-full md:w-1/2" key={i}>
+                <div className="flex items-center text-black duration-500 focus:ring-1 focus:ring-slate-600 relative">
+                  <Image src={contact.icon} className="w-10 duration-300 hover:-translate-y-1" 
+                    alt={contact.channel} width={150} height={150} />
+                  <div className="flex flex-col justify-center">
                     <span className="text-sm sm:text-base text-white duration-100 pl-4">
-                      jainkarn.p@gmail.com
-                    </span>                    
-                  </a>
+                      {contact.channel}
+                    </span>   
+                    <a href={contact.details}>
+                      <span className="text-sm sm:text-base text-white duration-100 pl-4">
+                        {contact.details}
+                      </span>                    
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="sm:w-full md:w-1/2">
-              <div className="flex items-center text-black duration-500 focus:ring-1 focus:ring-slate-600 relative">
-                <Image src={iconPhone} className="w-10" 
-                  alt="Frontend Engineer" width={150} height={150} />
-                <div className="flex flex-col justify-center">
-                  <span className="text-sm sm:text-base text-white duration-100 pl-4">
-                    Phone
-                  </span>
-                  <span className="text-sm sm:text-base text-white duration-100 pl-4">
-                    (+61) 403260xxx
-                  </span> 
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
+
+          {/* Social medias */}
           <div className="flex items-center">
-            <a href="https://github.com/" rel="noreferrer" target="_blank">
-              <AiOutlineLinkedin size={35} className="mr-4 hover:-translate-y-1 text-white transition-transform cursor-pointer"  title="mammals"/>
+            <a href="http://www.linkedin.com/in/jainkarn-pitakkaittikool-a002a1116" rel="noreferrer" target="_blank">
+              <AiOutlineLinkedin size={35} className="mr-4 hover:-translate-y-1 text-white transition-transform cursor-pointer"  title="LinkedIn"/>
             </a>
-            <a href="https://github.com/" rel="noreferrer" target="_blank">
-              <AiOutlineGithub size={35} className="mr-4 hover:-translate-y-1 text-white transition-transform cursor-pointer" title="mammals"/>
+            <a href="https://github.com/JainRipper" rel="noreferrer" target="_blank">
+              <AiOutlineGithub size={35} className="mr-4 hover:-translate-y-1 text-white transition-transform cursor-pointer" title="Github"/>
             </a>
-            <a href="https://github.com/" rel="noreferrer" target="_blank">
+            <a href="https://www.facebook.com/" rel="noreferrer" target="_blank">
               <AiOutlineFacebook size={35} className="mr-4 hover:-translate-y-1 text-white transition-transform cursor-pointer" title="Facebook"/>
             </a>
-            <a href="https://github.com/" rel="noreferrer" target="_blank">
-              <AiOutlineInstagram size={35} className="hover:-translate-y-1 text-white transition-transform cursor-pointer"  title="mammals"/>            
+            <a href="https://www.instagram.com/jainkarn.p/" rel="noreferrer" target="_blank">
+              <AiOutlineInstagram size={35} className="hover:-translate-y-1 text-white transition-transform cursor-pointer"  title="Instagram"/>            
             </a>
           </div>
 

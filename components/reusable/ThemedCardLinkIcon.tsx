@@ -11,7 +11,6 @@ interface Props {
 }
 
 const ThemedCardLinkIcon = (props: Props) => {
-  console.log(props.icon);
 	return (
     <div className="p-4 max-w-sm duration-300 hover:-translate-y-1">
       <div className={`flex h-full dark:bg-gray-800 p-6 flex-col text-base font-inter border border-black ${props.color} text-black shadow-[5px_5px_0px_0px_#1a202c] rounded-lg duration-500 focus:ring-1 focus:ring-slate-600`}>

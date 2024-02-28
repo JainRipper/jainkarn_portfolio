@@ -68,8 +68,8 @@ const SkillSection = () => {
   return (
     <motion.section id="skills" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
       transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-      className="flex flex-col sm:justify-between sm:flex-row mt-6 md:mt-20 container mx-auto px-28 pb-20" >
-			<div className="pb-16 sm:flex sm:justify-between container mx-auto" >
+      className="mt-6 md:mt-20 px-28 pb-20" >
+			<div className="pb-16 sm:flex sm:justify-between container">
         {/* Intro */}
         <div className="w-full md:w-1/2 text-left">
           <div className="pb-10">

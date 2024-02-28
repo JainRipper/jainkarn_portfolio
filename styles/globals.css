@@ -74,6 +74,7 @@ a {
 	height: auto;
 	display: flex;
 	justify-content: center;
+	padding: 0px;
 }
 .carouselArea > .carouselPosts {
 	position: relative;

@@ -38,75 +38,78 @@ const footer = {
 
 const Footer = () => {
   return (
-    <footer className="mx-auto pt-20 px-28 items-center container ">
-			<div className="sm:flex sm:justify-between container mx-auto" >
-        {/* Intro */}
-        <div className="w-full md:w-1/2 text-left">
-          <div className="">
-            <h1 className="font-archivo font-bold text-3xl sm:text-left text-primary-light dark:text-ternary-dark" >
-              {footer.intro.title}
-            </h1>
-            <p className="mt-4 text-base md:text-lg sm:text-left leading-normal text-primary-light dark:text-ternary-dark" >
-              {footer.intro.details}
-            </p>
-          </div>
+    <footer className="pt-20 px-28">
+      <div className="items-center container">
+        <div className="sm:flex sm:justify-between container mx-auto" >
+          {/* Intro - Left */}
+          <div className="w-full md:w-1/2 text-left">
+            <div className="">
+              <h1 className="font-archivo font-bold text-3xl sm:text-left text-primary-light dark:text-ternary-dark" >
+                {footer.intro.title}
+              </h1>
+              <p className="mt-4 text-base md:text-lg sm:text-left leading-normal text-primary-light dark:text-ternary-dark" >
+                {footer.intro.details}
+              </p>
+            </div>
 
-          {/* Contacts */}
-          <div className="md:flex flex-wrap py-10">
-            { footer.contacts.map((contact: any, i: number) => (
-              <div className="sm:w-full md:w-1/2" key={i}>
-                <div className="flex items-center text-black duration-500 focus:ring-1 focus:ring-slate-600 relative">
-                  <Image src={contact.icon} className="w-10 duration-300 hover:-translate-y-1" 
-                    alt={contact.channel} width={150} height={150} />
-                  <div className="flex flex-col justify-center">
-                    <span className="text-sm sm:text-base text-white duration-100 pl-4">
-                      {contact.channel}
-                    </span>   
-                    <a href={contact.details}>
+            {/* Contacts */}
+            <div className="md:flex flex-wrap py-10">
+              { footer.contacts.map((contact: any, i: number) => (
+                <div className="sm:w-full md:w-1/2" key={i}>
+                  <div className="flex items-center text-black duration-500 focus:ring-1 focus:ring-slate-600 relative">
+                    <Image src={contact.icon} className="w-10 duration-300 hover:-translate-y-1" 
+                      alt={contact.channel} width={150} height={150} />
+                    <div className="flex flex-col justify-center">
                       <span className="text-sm sm:text-base text-white duration-100 pl-4">
-                        {contact.details}
-                      </span>                    
-                    </a>
+                        {contact.channel}
+                      </span>   
+                      <a href={contact.details}>
+                        <span className="text-sm sm:text-base text-white duration-100 pl-4">
+                          {contact.details}
+                        </span>                    
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Social medias */}
+            <div className="flex items-center">
+              <a href="http://www.linkedin.com/in/jainkarn-pitakkaittikool-a002a1116" rel="noreferrer" target="_blank">
+                <AiOutlineLinkedin size={35} className="mr-4 hover:-translate-y-1 text-white transition-transform cursor-pointer"  title="LinkedIn"/>
+              </a>
+              <a href="https://github.com/JainRipper" rel="noreferrer" target="_blank">
+                <AiOutlineGithub size={35} className="mr-4 hover:-translate-y-1 text-white transition-transform cursor-pointer" title="Github"/>
+              </a>
+              <a href="https://www.facebook.com/" rel="noreferrer" target="_blank">
+                <AiOutlineFacebook size={35} className="mr-4 hover:-translate-y-1 text-white transition-transform cursor-pointer" title="Facebook"/>
+              </a>
+              <a href="https://www.instagram.com/jainkarn.p/" rel="noreferrer" target="_blank">
+                <AiOutlineInstagram size={35} className="hover:-translate-y-1 text-white transition-transform cursor-pointer"  title="Instagram"/>            
+              </a>
+            </div>
+
           </div>
 
-          {/* Social medias */}
-          <div className="flex items-center">
-            <a href="http://www.linkedin.com/in/jainkarn-pitakkaittikool-a002a1116" rel="noreferrer" target="_blank">
-              <AiOutlineLinkedin size={35} className="mr-4 hover:-translate-y-1 text-white transition-transform cursor-pointer"  title="LinkedIn"/>
-            </a>
-            <a href="https://github.com/JainRipper" rel="noreferrer" target="_blank">
-              <AiOutlineGithub size={35} className="mr-4 hover:-translate-y-1 text-white transition-transform cursor-pointer" title="Github"/>
-            </a>
-            <a href="https://www.facebook.com/" rel="noreferrer" target="_blank">
-              <AiOutlineFacebook size={35} className="mr-4 hover:-translate-y-1 text-white transition-transform cursor-pointer" title="Facebook"/>
-            </a>
-            <a href="https://www.instagram.com/jainkarn.p/" rel="noreferrer" target="_blank">
-              <AiOutlineInstagram size={35} className="hover:-translate-y-1 text-white transition-transform cursor-pointer"  title="Instagram"/>            
+          {/* Form - Right*/}
+          <div className="w-full md:w-1/2">
+            <ContactForm />
+          </div>
+        </div>
+        
+        {/* Copy Right */}
+        <hr className="w-full h-[0.05rem] mx-auto my-8 bg-neutral-200 border-0"></hr>
+        <div className="mx-auto  pb-6 px-4 flex flex-col text-center text-neutral-900 md:flex-row md:justify-between">
+          <div className="flex flex-row items-center justify-center space-x-2 mb-1">
+            <Image src={logoDark} className="cursor-pointer duration-300 hover:translate-x-1 w-28"
+                  alt="Dark Logo" width={150} height={120} />
+          </div>
+          <div className="flex flex-row items-center justify-center space-x-1 text-neutral-100 dark:text-neutral-300">
+            <a href="/" className="hover:underline">
+            © 2024 Jainkarn - Website Portofolio
             </a>
           </div>
-
-        </div>
-
-        {/* form */}
-        <div className="w-full md:w-1/2">
-          <ContactForm />
-        </div>
-      </div>
-
-      <hr className="w-full h-[0.05rem] mx-auto my-8 bg-neutral-200 border-0"></hr>
-      <div className="mx-auto  pb-6 px-4 flex flex-col text-center text-neutral-900 md:flex-row md:justify-between">
-        <div className="flex flex-row items-center justify-center space-x-2 mb-1">
-          <Image src={logoDark} className="cursor-pointer duration-300 hover:translate-x-1 w-28"
-								alt="Dark Logo" width={150} height={120} />
-        </div>
-        <div className="flex flex-row items-center justify-center space-x-1 text-neutral-100 dark:text-neutral-300">
-          <a href="/" className="hover:underline">
-          © 2024 Jainkarn - Website Portofolio
-          </a>
         </div>
       </div>
     </footer>

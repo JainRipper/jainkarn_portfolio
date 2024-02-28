@@ -111,9 +111,10 @@ const PortfolioSection = () => {
           <p className='titleStyle text-xl leading-5 font-bold whitespace-pre-line tracking-wider'>{item.name}</p>
           <p className='text-xl '>{item.title}</p>
           <div className="text-justify">
-            {strArr.map((str: any) => {
+            {/* {strArr.map((str: any) => {
               return <div>{str}</div>
-            })}
+            })} */}
+            {item.quote}
           </div>
         </div>
      </div>
@@ -123,59 +124,60 @@ const PortfolioSection = () => {
   return (
     <motion.section id="portfolio" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 		  transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-		  className="pt-15 pb-28 items-center container mx-auto px-28" 
-    >
-      <div className="py-16 sm:flex-col text-center sm:justify-center sm:items-center container mx-auto" >
+		  className="pt-15 pb-28 px-28">
+      <div className="items-center container">
         {/* Intro */}
-        <h1 className="font-archivo font-bold text-2xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
-          {portfolio.intro.title}
-        </h1>
-        <p className="mt-4  text-base md:text-lg leading-normal text-gray-500 dark:text-gray-200" >
-          {portfolio.intro.details}
-        </p>        
-      </div>
-
-      <div className="flex-col flex justify-center items-center pb-20">
-        { portfolio.projects.map((project: any, i: number) => (
-          <ThemedCardProject 
-            skill={project.skills}
-            title={project.title}
-            details={project.details}
-            position={project.position}
-            image={project.image}
-            link={project.link}
-          />
-        ))}
-        <div className="text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer">
-					<Link to="services" aria-label="Services" className="w-6 px-6 py-5">
-            See More Project
-					</Link>
-				</div>
-      </div>
-
-      {/* Testimonial */}
-      <div className="flex-col flex justify-center items-center pb-16 pt-20">
-        <div className="sm:flex-col text-center sm:justify-center sm:items-center container mx-auto mb-14" >
+        <div className="py-16 sm:flex-col text-center sm:justify-center mx-auto" >
           <h1 className="font-archivo font-bold text-2xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
-            {testimonials.intro.title}
+            {portfolio.intro.title}
           </h1>
-          <p className="mt-4 text-base md:text-lg leading-normal text-gray-500 dark:text-gray-200" >
-            {testimonials.intro.details}
+          <p className="mt-4  text-base md:text-lg leading-normal text-gray-500 dark:text-gray-200" >
+            {portfolio.intro.details}
           </p>        
         </div>
-        
-        <React.Fragment>
-         <ThemedCarousel 
-            dataArray={testimonials.carousal}
-            // autoplay={true}
-            delay={10}
-            carouselPostWidth={'600px'} 
-            carouselPostHeight={'200px'}
-            carouselPostMargin={10}>
-            {renderChildrenView}
-          </ThemedCarousel>
-        </React.Fragment>
-      </div>      
+        {/* Projects */}
+        <div className="flex-col flex justify-center items-center pb-20">
+          { portfolio.projects.map((project: any, i: number) => (
+            <ThemedCardProject 
+              skill={project.skills}
+              title={project.title}
+              details={project.details}
+              position={project.position}
+              image={project.image}
+              link={project.link}
+            />
+          ))}
+          <div className="text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer">
+            <Link to="services" aria-label="Services" className="w-6 px-6 py-5">
+              See More Project
+            </Link>
+          </div>
+        </div>
+
+        {/* Testimonial */}
+        <div className="flex-col flex justify-center items-center pb-16 pt-20">
+          <div className="sm:flex-col text-center sm:justify-center sm:items-center container mx-auto mb-14" >
+            <h1 className="font-archivo font-bold text-2xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
+              {testimonials.intro.title}
+            </h1>
+            <p className="mt-4 text-base md:text-lg leading-normal text-gray-500 dark:text-gray-200" >
+              {testimonials.intro.details}
+            </p>        
+          </div>
+          
+          <React.Fragment>
+          <ThemedCarousel 
+              dataArray={testimonials.carousal}
+              // autoplay={true}
+              delay={10}
+              carouselPostWidth={'600px'} 
+              carouselPostHeight={'200px'}
+              carouselPostMargin={10}>
+              {renderChildrenView}
+            </ThemedCarousel>
+          </React.Fragment>
+        </div>
+      </div>
 
     </motion.section>
   )

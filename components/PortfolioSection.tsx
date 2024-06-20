@@ -12,6 +12,7 @@ import logoDark from '../public/icons/logo-dark.svg';
 import img10 from '../public/img_10.jpg';
 import ThemedCarousel from './reusable/ThemedCarousel';
 import ThemedCardProject from './reusable/ThemedCardProject';
+import useWindowDimensions from './reusable/useWindowDimensions';
 
 const testimonials = {
   intro: {
@@ -98,22 +99,20 @@ const portfolio = {
 }
 
 const PortfolioSection = () => {
-  const renderChildrenView = (item: any ,index: number) => {
-    let strArr = item.quote.match(/.{1,45}/g);
+  // const { height, width } = useWindowDimensions();
+  const renderChildrenView = (item: any ,index: number) => {    
+    // Note: width: 600px -> conputedLeft: 600px, 470px -> 470px
     return (
-      <div className='contentBox flex items-center bg-white w-full h-full box-border p-4 font-inter text-base justify-between border border-black hover:bg-slate-200 text-black shadow-[0px_4px_3px_0px_#00000024]  rounded-xl py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600' key={index}>
-        <div className='w-1/3 mr-1 flex-none text-center'>
+      <div className='contentBox lg:flex xl:w-[600px] lg:w-[470px] lg:h-[200px] md:h-[390px] items-center bg-white w-full h-full box-border p-4 font-inter text-base justify-between border border-black hover:bg-slate-200 text-black shadow-[0px_4px_3px_0px_#00000024] rounded-xl py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600' key={index}>
+        <div className='lg:w-1/3 mr-1 lg:mb-0 sm:mb-2 flex-none text-center'>
           <div 
             style={{backgroundImage:`url(${item.image})`}} 
             className={`imageStyle bg-center bg-cover ml-1 h-44 w-full rounded-xl`}/> 
-        </div>        
-        <div className='fontBox w-2/3 flex flex-col pl-3 justify-center'>
+        </div>
+        <div className='lg:w-2/3 md:px-3 md:[&>*]:pt-[5px] fontBox flex flex-col pl-3 justify-center whitespace-normal'>
           <p className='titleStyle text-xl leading-5 font-bold whitespace-pre-line tracking-wider'>{item.name}</p>
           <p className='text-xl '>{item.title}</p>
           <div className="text-justify">
-            {/* {strArr.map((str: any) => {
-              return <div>{str}</div>
-            })} */}
             {item.quote}
           </div>
         </div>
@@ -124,7 +123,7 @@ const PortfolioSection = () => {
   return (
     <motion.section id="portfolio" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 		  transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-		  className="pt-15 pb-28 px-28">
+		  className="pt-15 pb-28">
       <div className="items-center container">
         {/* Intro */}
         <div className="py-16 sm:flex-col text-center sm:justify-center mx-auto" >
@@ -172,9 +171,13 @@ const PortfolioSection = () => {
               delay={10}
               carouselPostWidth={'600px'} 
               carouselPostHeight={'200px'}
-              carouselPostMargin={10}>
+              // carouselPostMargin={10}
+              >
               {renderChildrenView}
             </ThemedCarousel>
+          {/* <>
+            width: {width}, Height: {height}
+          </> */}
           </React.Fragment>
         </div>
       </div>

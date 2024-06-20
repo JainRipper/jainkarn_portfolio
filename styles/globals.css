@@ -103,3 +103,65 @@ a {
 .cardBox .fontBox {
 	width: calc(100% - 100px - 5px);
 }
+
+/* Media Queries */
+@media screen and (max-width: 1280px) {
+	.controlRight {
+		right: 27rem;
+	}
+	.controlLeft {
+		left: 27rem;
+	}
+  }
+
+  /* @media screen and (max-width: 1023px) {
+	.carouselContainer {
+		max-width: 840px;
+	}
+	.controlRight, .controlLeft {
+		top: 25rem;
+	}
+	.controlLeft {
+		left: 23rem;
+	}
+	.controlRight {
+		right: 23rem;
+	}
+  } */
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .carouselContainer {
+		max-width: 650px;
+	}
+	.contentBox {
+		width: 302px;
+	}
+	.controlRight, .controlLeft {
+		top: 27rem;
+	}
+	.controlLeft {
+		left: 16rem;
+	}
+	.controlRight {
+		right: 16rem;
+	}
+}
+/* SM */
+@media screen and (max-width: 768px) {
+	.carouselContainer {
+		max-width: 525px;
+	}
+	.contentBox {
+		width: 500px;
+		height: 340px;
+	}
+	.controlRight, .controlLeft {
+		top: 28rem;
+	}
+	.controlRight {
+		right: 13rem;
+	}
+	.controlLeft {
+		left: 13rem;
+	}
+  }

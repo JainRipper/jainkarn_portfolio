@@ -17,7 +17,7 @@ import logoDark from '../../public/icons/logo-dark.svg';
 const footer = {
   intro: {
     title: "Tell Me About Your Project",
-    details: "Share your project details, goals, and vision. Let s collaborate to shape a customized solution that aligns with your objectives and aspirations for success"
+    details: "Share your project details, goals, and vision. Let's collaborate to shape a customized solution that aligns with your objectives and aspirations for success"
   },
   contacts: [
     {
@@ -38,11 +38,11 @@ const footer = {
 
 const Footer = () => {
   return (
-    <footer className="pt-20 px-28">
+    <footer className="pt-20 lg:px-10">
       <div className="items-center container">
-        <div className="sm:flex sm:justify-between container mx-auto" >
+        <div className="md:flex sm:justify-between container mx-auto" >
           {/* Intro - Left */}
-          <div className="w-full md:w-1/2 text-left">
+          <div className="w-full md:w-1/2 text-left md:pr-5">
             <div className="">
               <h1 className="font-archivo font-bold text-3xl sm:text-left text-primary-light dark:text-ternary-dark" >
                 {footer.intro.title}
@@ -53,18 +53,18 @@ const Footer = () => {
             </div>
 
             {/* Contacts */}
-            <div className="md:flex flex-wrap py-10">
+            <div className="lg:flex flex-wrap lg:py-10 md:pt-5 md:pb-10">
               { footer.contacts.map((contact: any, i: number) => (
-                <div className="sm:w-full md:w-1/2" key={i}>
-                  <div className="flex items-center text-black duration-500 focus:ring-1 focus:ring-slate-600 relative">
+                <div className="lg:w-1/2 md:w-full md:mt-2" key={i}>
+                  <div className="flex items-center text-black duration-500 focus:ring-1 focus:ring-slate-600 relative lg:pr-2">
                     <Image src={contact.icon} className="w-10 duration-300 hover:-translate-y-1" 
                       alt={contact.channel} width={150} height={150} />
                     <div className="flex flex-col justify-center">
-                      <span className="text-sm sm:text-base text-white duration-100 pl-4">
+                      <span className="sm:text-base text-white duration-100 pl-2">
                         {contact.channel}
                       </span>   
                       <a href={contact.details}>
-                        <span className="text-sm sm:text-base text-white duration-100 pl-4">
+                        <span className="sm:text-sm text-white duration-100 pl-2">
                           {contact.details}
                         </span>                    
                       </a>

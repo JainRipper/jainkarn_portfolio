@@ -20,7 +20,8 @@ npm run dev
 
 <!-- TO DO -->
 - organize tailwind class - prettier        [Done]
-- reusable component: buttons, links, ...
+- reusable component: buttons, links, ...   [Done]
+- fix carousel responsive mode
 - default color from tailwind config
 - highlight navbar link while at that ID
 - dark mode: fix text color

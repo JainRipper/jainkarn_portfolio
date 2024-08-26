@@ -11,97 +11,110 @@ import projectFull from '../public/images/project-full.svg';
 import logoDark from '../public/icons/logo-dark.svg';
 import img10 from '../public/img_10.jpg';
 import ThemedCarousel from './reusable/ThemedCarousel';
+import ThemedCardProject from './reusable/ThemedCardProject';
+import useWindowDimensions from './reusable/useWindowDimensions';
 
-const portfolio = [
-  {
-    name: "Thankful Thoughts",
-    description:
-      "ThankfulThoughts is a web app that generates an appreciative sentence of something or someone you are thankful for.",
-    image: "/thankfulthoughts.png",
-    github: "https://github.com/hqasmei/thankful-thoughts",
-    link: "https://thankfulthoughts.io/",
+const testimonials = {
+  intro: {
+    title: "Testimonial",
+    details: "Front-end and Web development satisfy my need for creativity. This channel enables me to easily put my ideas into digital form and"
   },
-  {
-    name: "PlatoIO",
-    description: "PlatoIO is a to do list app that built using the PERN stack.",
-    image: "/platoio.png",
-    github: "https://github.com/hqasmei/platoio",
-    link: "https://platoio.com/register",
-  },
-  {
-    name: "Kator Family Photos",
-    description:
-      "Kator Family Photos is a photos and video digitization service in the LA area.",
-    image: "/familyphotos.png",
-    github: "https://github.com/hqasmei/katorfamilyphotos",
-    link: "https://katorfamilyphotos.com/",
-  },
-]
+  carousal: [
+    {
+      image:'https://picsum.photos/id/1/2500/2500',
+      name: 'Barry Slaughterhouse',
+      title:'CEO Bersekar inc',
+      quote:'Working with JainKarn was a game-changer! Our website now stands out with seamless design and functionality. Impressive work!'
+    },
+    {
+      image:'https://picsum.photos/id/10/2500/1667',
+      name: 'Christian Smith',
+      title:'Manager Meta',
+      quote:'Kudos to Jainkarn for an outstanding job! Our site\'s aesthetics and user experience surpassed expectations.' 
+    },
+     {
+      image:'https://picsum.photos/id/1000/2500/2500',
+      name: 'Cameron Rabbit',
+      title:'Thankful Thoughts',
+      quote:'Everyone’s on the same page. Many of our people are not very organized naturally, so web developer is a godsend!' 
+    } ,
+     {
+      image:'https://picsum.photos/id/1003/1181/1772',
+      name: 'Darrell Steward',
+      title:'Lorem Ipsum',
+      quote:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' 
+    },
+    {
+     image:'https://picsum.photos/id/1000/2500/2500',
+     name: 'Jane Cooper',
+     title:'Thankful Thoughts',
+     quote:'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' 
+    },
+    {
+      image:'https://picsum.photos/id/1/2500/2500',
+      name: 'Molly Thunder',
+      title:'Kator Family Photos',
+      quote:'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident'
+    },
+    {
+      image:'https://picsum.photos/id/10/2500/1667',
+      name: 'Harriet Gobble',
+      title:'PlatoIO',
+      quote:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium' 
+    }
+  ]
+}
 
-let imageArray = [
-  {
-    image:'https://picsum.photos/id/1/2500/2500',
-    name: 'Barry Slaughterhouse',
-    title:'CEO Bersekar inc',
-    quote:'Working with JainKarn was a game-changer! Our website now stands out with seamless design and functionality. Impressive work!'
+const portfolio = {
+  intro: {
+    title: "Featured Projects",
+    details: "Showcasing outstanding projects: Explore the diversity and excellence in my featured portfolio."
   },
-  {
-    image:'https://picsum.photos/id/10/2500/1667',
-    name: 'Christian Smith',
-    title:'Manager Meta',
-    quote:'Kudos to Jainkarn for an outstanding job! Our site\'s aesthetics and user experience surpassed expectations.' 
-  },
-   {
-    image:'https://picsum.photos/id/1000/2500/2500',
-    name: 'Cameron Rabbit',
-    title:'Thankful Thoughts',
-    quote:'Everyone’s on the same page. Many of our people are not very organized naturally, so web developer is a godsend!' 
-  } ,
-   {
-    image:'https://picsum.photos/id/1003/1181/1772',
-    name: 'Darrell Steward',
-    title:'Lorem Ipsum',
-    quote:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' 
-  },
-  {
-   image:'https://picsum.photos/id/1000/2500/2500',
-   name: 'Jane Cooper',
-   title:'Thankful Thoughts',
-   quote:'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' 
-  },
-  {
-    image:'https://picsum.photos/id/1/2500/2500',
-    name: 'Molly Thunder',
-    title:'Kator Family Photos',
-    quote:'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident'
-  },
-  {
-    image:'https://picsum.photos/id/10/2500/1667',
-    name: 'Harriet Gobble',
-    title:'PlatoIO',
-    quote:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium' 
-  }
-]
+  projects: [
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Fashion Landing Page",
+      details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "right",
+      image: "bg-[url('/images/project.svg')]",
+      link: ""
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Fashion Landing Page",
+      details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "left",
+      image: "bg-[url('/images/project.svg')]",
+      link: ""
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Fashion Landing Page",
+      details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "right",
+      image: "bg-[url('/images/project.svg')]",
+      link: ""
+    }
+  ]
+}
 
 const PortfolioSection = () => {
-  const renderChildrenView = (item: any ,index: number) => {
-    let strArr = item.quote.match(/.{1,45}/g);
+  // const { height, width } = useWindowDimensions();
+  const renderChildrenView = (item: any ,index: number) => {    
+    // Note: width: 600px -> conputedLeft: 600px, 470px -> 470px
     return (
-      <div className='contentBox flex items-center bg-white w-full h-full box-border p-4 font-inter text-base justify-between border border-black hover:bg-slate-200 text-black shadow-[0px_4px_3px_0px_#00000024]  rounded-xl py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600' key={index}>
-        <div className='w-1/3 mr-1 flex-none text-center'>
+      <div className='contentBox lg:flex xl:w-[600px] lg:w-[470px] lg:h-[200px] md:h-[390px] items-center bg-white w-full h-full box-border p-4 font-inter text-base justify-between border border-black hover:bg-slate-200 text-black shadow-[0px_4px_3px_0px_#00000024] rounded-xl py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600' key={index}>
+        <div className='lg:w-1/3 mr-1 lg:mb-0 sm:mb-2 flex-none text-center'>
           <div 
             style={{backgroundImage:`url(${item.image})`}} 
             className={`imageStyle bg-center bg-cover ml-1 h-44 w-full rounded-xl`}/> 
-        </div>        
-        <div className='fontBox w-2/3 flex flex-col pl-3 justify-center'>
+        </div>
+        <div className='lg:w-2/3 md:px-3 md:[&>*]:pt-[5px] fontBox flex flex-col pl-3 justify-center whitespace-normal'>
           <p className='titleStyle text-xl leading-5 font-bold whitespace-pre-line tracking-wider'>{item.name}</p>
           <p className='text-xl '>{item.title}</p>
           <div className="text-justify">
-            {strArr.map((str: any) => {
-              return <div>{str}</div>
-            })}
+            {item.quote}
           </div>
-          {/* <span>{item.quote}</span> */}
         </div>
      </div>
     )
@@ -110,130 +123,64 @@ const PortfolioSection = () => {
   return (
     <motion.section id="portfolio" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 		  transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-		  className="pt-15 pb-28 items-center container mx-auto px-28" 
-    >
-      <div className="py-16 sm:flex-col text-center sm:justify-center sm:items-center container mx-auto" >
+		  className="pt-15 pb-28">
+      <div className="items-center container">
         {/* Intro */}
-        <h1 className="font-archivo font-bold text-2xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
-          Featured Projects
-        </h1>
-        <p className="mt-4  text-base md:text-lg leading-normal text-gray-500 dark:text-gray-200" >
-          Showcasing outstanding projects: Explore the diversity and excellence in my featured portfolio.
-        </p>        
-      </div>
-
-      <div className="flex-col flex justify-center items-center pb-20">
-        <div className="max-w-sm w-full lg:max-w-7xl lg:flex mb-12">
-          <div className="h-96 lg:w-1/2 flex-none bg-cover border-r-0 rounded-l-lg text-center overflow-hidden bg-[url('/images/project.svg')]"  
-          title="Woman holding a mug">
-          </div>
-          <div className="border-r border-b border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-r-lg p-4 flex flex-col justify-center leading-normal">
-            <div className="mb-8 w-3/4">
-              <p className="text-sm flex items-center text-red-600 pb-5">
-                UX/ UI Web development
-              </p>
-              <div className="text-gray-900 font-bold text-3xl mb-2">
-              Website Design For Fashion Landing Page
-              </div>
-              <p className="text-gray-700 text-base">
-                I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores
-              </p>
-            </div>
-            <a href=""
-                className="font-inter text-base w-[28%] flex justify-between items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600"
-                aria-label="Download Resume" >
-                <span className="text-sm sm:text-lg duration-100">
-                  View Project
-                </span>
-                <MdArrowOutward className="ml-0 sm:ml-1 mr-2 h-5 w-5 sn:w-6 sm:h-6 duration-100"></MdArrowOutward>
-              </a>
-          </div>
-        </div>
-
-        <div className="max-w-sm w-full lg:max-w-7xl lg:flex mb-12">
-          <div className="border-l border-b border-gray-400 lg:border-r-0 lg:border-t lg:border-gray-400 bg-white rounded-l-lg p-4 pl-10 flex flex-col justify-center leading-normal">
-            <div className="mb-8 w-3/4">
-              <p className="text-sm flex items-center text-red-600 pb-5">
-                UX/ UI Web development
-              </p>
-              <div className="text-gray-900 font-bold text-3xl mb-2">
-              Website Design For Fashion Landing Page
-              </div>
-              <p className="text-gray-700 text-base">
-                I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores
-              </p>
-            </div>
-            <a href=""
-                className="font-inter text-base w-[28%] flex justify-between items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600"
-                aria-label="Download Resume" >
-                <span className="text-sm sm:text-lg duration-100">
-                  View Project
-                </span>
-                <MdArrowOutward className="ml-0 sm:ml-1 mr-2 h-5 w-5 sn:w-6 sm:h-6 duration-100"></MdArrowOutward>
-              </a>
-          </div>
-          <div className="h-96 lg:w-1/2 flex-none bg-cover border-l-0 rounded-r-lg text-center overflow-hidden bg-[url('/images/project.svg')]"  
-          title="Woman holding a mug">
-          </div>
-        </div>
-
-        <div className="max-w-sm w-full lg:max-w-7xl lg:flex mb-12">
-          <div className="h-96 lg:w-1/2 flex-none bg-cover border-r-0 rounded-l-lg text-center overflow-hidden bg-[url('/images/project.svg')]"  
-          title="Woman holding a mug">
-          </div>
-          <div className="border-r border-b border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-r-lg p-4 flex flex-col justify-center leading-normal">
-            <div className="mb-8 w-3/4">
-              <p className="text-sm flex items-center text-red-600 pb-5">
-                UX/ UI Web development
-              </p>
-              <div className="text-gray-900 font-bold text-3xl mb-2">
-              Website Design For Fashion Landing Page
-              </div>
-              <p className="text-gray-700 text-base">
-                I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores
-              </p>
-            </div>
-            <a href=""
-                className="font-inter text-base w-[28%] flex justify-between items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600"
-                aria-label="Download Resume" >
-                <span className="text-sm sm:text-lg duration-100">
-                  View Project
-                </span>
-                <MdArrowOutward className="ml-0 sm:ml-1 mr-2 h-5 w-5 sn:w-6 sm:h-6 duration-100"></MdArrowOutward>
-              </a>
-          </div>
-        </div>
-
-        <div className="text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer">
-					<Link to="services" aria-label="Services" className="w-6 px-6 py-5">
-            See More Project
-					</Link>
-				</div>
-      </div>
-
-      {/* Testimonial */}
-      <div className="flex-col flex justify-center items-center pb-16 pt-20">
-        <div className="sm:flex-col text-center sm:justify-center sm:items-center container mx-auto mb-14" >
+        <div className="py-16 sm:flex-col text-center sm:justify-center mx-auto" >
           <h1 className="font-archivo font-bold text-2xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
-            Testimonial
+            {portfolio.intro.title}
           </h1>
-          <p className="mt-4 text-base md:text-lg leading-normal text-gray-500 dark:text-gray-200" >
-            Front-end and Web development satisfy my need for creativity. This channel enables me to easily put my ideas into digital form and
+          <p className="mt-4  text-base md:text-lg leading-normal text-gray-500 dark:text-gray-200" >
+            {portfolio.intro.details}
           </p>        
         </div>
-        
-        <React.Fragment>
-         <ThemedCarousel 
-            dataArray={imageArray}
-            // autoplay={true}
-            delay={10}
-            carouselPostWidth={'600px'} 
-            carouselPostHeight={'200px'}
-            carouselPostMargin={10}>
-            {renderChildrenView}
-          </ThemedCarousel>
-        </React.Fragment>
-      </div>      
+        {/* Projects */}
+        <div className="flex-col flex justify-center items-center pb-20">
+          { portfolio.projects.map((project: any, i: number) => (
+            <ThemedCardProject 
+              skill={project.skills}
+              title={project.title}
+              details={project.details}
+              position={project.position}
+              image={project.image}
+              link={project.link}
+            />
+          ))}
+          <div className="text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer">
+            <Link to="services" aria-label="Services" className="w-6 px-6 py-5">
+              See More Project
+            </Link>
+          </div>
+        </div>
+
+        {/* Testimonial */}
+        <div className="flex-col flex justify-center items-center pb-16 pt-20">
+          <div className="sm:flex-col text-center sm:justify-center sm:items-center container mx-auto mb-14" >
+            <h1 className="font-archivo font-bold text-2xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
+              {testimonials.intro.title}
+            </h1>
+            <p className="mt-4 text-base md:text-lg leading-normal text-gray-500 dark:text-gray-200" >
+              {testimonials.intro.details}
+            </p>        
+          </div>
+          
+          <React.Fragment>
+          <ThemedCarousel 
+              dataArray={testimonials.carousal}
+              // autoplay={true}
+              delay={10}
+              carouselPostWidth={'600px'} 
+              carouselPostHeight={'200px'}
+              // carouselPostMargin={10}
+              >
+              {renderChildrenView}
+            </ThemedCarousel>
+          {/* <>
+            width: {width}, Height: {height}
+          </> */}
+          </React.Fragment>
+        </div>
+      </div>
 
     </motion.section>
   )

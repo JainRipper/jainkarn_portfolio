@@ -114,20 +114,20 @@ a {
 	}
   }
 
-  /* @media screen and (max-width: 1023px) {
-	.carouselContainer {
+  @media screen and (max-width: 1280px) {
+	/* .carouselContainer {
 		max-width: 840px;
-	}
+	} */
 	.controlRight, .controlLeft {
-		top: 25rem;
+		top: 20rem;
 	}
-	.controlLeft {
+	/* .controlLeft {
 		left: 23rem;
 	}
 	.controlRight {
 		right: 23rem;
-	}
-  } */
+	} */
+  }
 
   @media (min-width: 768px) and (max-width: 1023px) {
     .carouselContainer {
@@ -163,5 +163,24 @@ a {
 	}
 	.controlLeft {
 		left: 13rem;
+	}
+  }
+/* XS */
+@media screen and (max-width: 550px) {
+	.carouselContainer {
+		max-width: 375px;
+	}
+	.contentBox {
+		width: 350px;
+		height: 360px;
+	}
+	.controlRight, .controlLeft {
+		top: 26rem;
+	}
+	.controlRight {
+		right: 8rem;
+	}
+	.controlLeft {
+		left: 8rem;
 	}
   }

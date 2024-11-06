@@ -145,10 +145,12 @@ const Navbar = () => {
 			</div>
 		</div>
 		<div>
+			<>
 			{showModal ? (
 				<ContactUsModal onClose={showContactUsModal} onRequest={showContactUsModal} />
 			) : null}
 			{showModal ? showContactUsModal : null}
+			</>
 		</div>
 	</motion.nav>
   )

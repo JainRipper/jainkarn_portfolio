@@ -21,10 +21,10 @@ const testimonials = {
   },
   carousal: [
     {
-      image:'https://picsum.photos/id/1/2500/2500',
-      name: 'Barry Slaughterhouse',
-      title:'CEO Bersekar inc',
-      quote:'Working with JainKarn was a game-changer! Our website now stands out with seamless design and functionality. Impressive work!'
+      image: '/images/testimonial/nick_elith.jpeg',
+      name: 'Nick Elith',
+      title:'Director of techNick Consulting Pty Ltd',
+      quote:`I have no hesitation in recommending him for any engagement that requires a person of enthusiasm, honesty, willingness to work hard and IT savvy`
     },
     {
       image:'https://picsum.photos/id/10/2500/1667',
@@ -76,7 +76,7 @@ const portfolio = {
       title: "Website Design For Fashion Landing Page",
       details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
       position: "right",
-      image: "bg-[url('/images/project.svg')]",
+      image: "bg-[url('/images/project01.svg')]",
       link: ""
     },
     {
@@ -84,7 +84,7 @@ const portfolio = {
       title: "Website Design For Fashion Landing Page",
       details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
       position: "left",
-      image: "bg-[url('/images/project.svg')]",
+      image: "bg-[url('/images/project02.svg')]",
       link: ""
     },
     {
@@ -92,7 +92,7 @@ const portfolio = {
       title: "Website Design For Fashion Landing Page",
       details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
       position: "right",
-      image: "bg-[url('/images/project.svg')]",
+      image: "bg-[url('/images/project03.svg')]",
       link: ""
     }
   ]
@@ -103,7 +103,7 @@ const PortfolioSection = () => {
   const renderChildrenView = (item: any ,index: number) => {    
     // Note: width: 600px -> conputedLeft: 600px, 470px -> 470px
     return (
-      <div className='contentBox lg:flex xl:w-[600px] lg:w-[470px] lg:h-[200px] md:h-[390px] items-center bg-white w-full h-full box-border p-4 font-inter text-base justify-between border border-black hover:bg-slate-200 text-black shadow-[0px_4px_3px_0px_#00000024] rounded-xl py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600' key={index}>
+      <div className='contentBox lg:flex xl:w-[600px] xl:h-[200px] lg:w-[470px] lg:h-[250px] md:h-[390px] items-center bg-white w-full h-full box-border p-4 font-inter text-base justify-between border border-black hover:bg-slate-200 text-black shadow-[0px_4px_3px_0px_#00000024] rounded-xl py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600' key={index}>
         <div className='lg:w-1/3 mr-1 lg:mb-0 sm:mb-2 flex-none text-center'>
           <div 
             style={{backgroundImage:`url(${item.image})`}} 
@@ -111,7 +111,7 @@ const PortfolioSection = () => {
         </div>
         <div className='lg:w-2/3 md:px-3 md:[&>*]:pt-[5px] fontBox flex flex-col pl-3 justify-center whitespace-normal'>
           <p className='titleStyle text-xl leading-5 font-bold whitespace-pre-line tracking-wider'>{item.name}</p>
-          <p className='text-xl '>{item.title}</p>
+          <p className='text-l '>{item.title}</p>
           <div className="text-justify">
             {item.quote}
           </div>
@@ -138,6 +138,7 @@ const PortfolioSection = () => {
         <div className="flex-col flex justify-center items-center pb-20">
           { portfolio.projects.map((project: any, i: number) => (
             <ThemedCardProject 
+              key={`project-${i}`}
               skill={project.skills}
               title={project.title}
               details={project.details}

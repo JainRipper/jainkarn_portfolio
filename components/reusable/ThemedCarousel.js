@@ -20,16 +20,18 @@ const ThemedCarousel = (props) => {
     //   this.autoPlay()
     // }
     // clearInterval(this.timer)
-    // console.log(heightF, widthCarousel);
-    
+
+    // Set width of carousel based on screen size from @media screen globals.css (.contentBox)
     if (width >= 1240) {
       setWidthCarousel('600px');
     } else if (width < 1240 && width >= 1024) {
       setWidthCarousel('470px');
     } else if (width < 1024 && width > 768) {
       setWidthCarousel('302px');
-    } else if (width <= 768) {
+    } else if (width <= 768 && width > 550) {
       setWidthCarousel('500px');
+    } else if (width <= 550) {
+      setWidthCarousel('350px');
     }
 	}, []);
 

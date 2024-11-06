@@ -64,7 +64,7 @@ const ContactForm = () => {
       </div>
       <div className="mb-6">
         <button
-          className="text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#fff] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer w-1/3 px-4  focus:outline-none focus:bg-amber-400"
+          className="xs:w-full sm:w-1/2 text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#fff] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer px-4  focus:outline-none focus:bg-amber-400"
           type="submit"
         >
           Send Message

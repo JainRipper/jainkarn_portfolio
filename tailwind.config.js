@@ -64,6 +64,7 @@ module.exports = {
         // notice how the color changes at 768px but
         // the container size changes at 728px
         screens: {
+          xs: '550px',
           sm: '600px',
           md: '728px',
           lg: '984px',

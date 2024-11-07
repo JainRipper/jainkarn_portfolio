@@ -55,7 +55,7 @@ const HeroSection = () => {
 					className="flex mt-12" >						
 					<div className="text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer">
 						<Link to="services" aria-label="Services" className="w-6 px-6 py-5">
-							Let's Start
+							Let&apos;s Start
 						</Link>
 					</div>
 					<a download="Jainkarn-Resume.pdf" href="/files/Jainkarn-Resume.pdf"

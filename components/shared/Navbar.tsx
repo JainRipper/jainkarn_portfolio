@@ -12,13 +12,13 @@ import { IoMdMenu, IoMdClose } from "react-icons/io";
 import ContactUsModal from '../ContactUsModal';
 import logoLight from '../../public/icons/logo-light.svg';
 import logoDark from '../../public/icons/logo-dark.svg';
-import userData from "../../constants/data";
 import ThemedBtn from '../reusable/ThemedBtn';
 
 const Navbar = () => {
+	const navData = [ "Home", "Services", "Skills", "Portfolio" ];
+
 	const [showMenu, setShowMenu] = useState(false);
 	const [showModal, setShowModal] = useState(false);
-	
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
 
@@ -93,26 +93,13 @@ const Navbar = () => {
 
 			{/* Header links small screen */}
 			<div className={showMenu ? 'block m-0 sm:ml-4 sm:mt-3 md:flex px-5 py-3 sm:p-0 justify-between items-center shadow-lg sm:shadow-none' : 'hidden' } >
-				<div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2">
-					<Link to="home" aria-label="Home">
-					{userData.name}
-					</Link>
-				</div>
-				<div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark">
-					<Link to="services" aria-label="Services">
-						Services
-					</Link>
-				</div>
-				<div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark">
-					<Link to="skills" aria-label="Skills">
-						Skills
-					</Link>
-				</div>
-				<div className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark">
-					<Link to="portfolio" aria-label="Portfolio">
-						Portfolio
-					</Link>
-				</div>
+				{ navData.map((data, i) => (
+					<div key={`${data}-${i}}`} className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 mb-2 sm:py-2">
+						<Link to={data.toLocaleLowerCase()} aria-label={data}>
+							{data}
+						</Link>
+					</div>
+				))}
 				<div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
 					<ThemedBtn 
 						label="Contact Us"
@@ -126,22 +113,13 @@ const Navbar = () => {
 
 			{/* Header links large screen */}
 			<div className="text-md font-inter hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
-				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light cursor-pointer sm:mx-4 mb-2 sm:py-2" 
-					aria-label="Home" >
-					<Link to="home">Home</Link>
-				</div>
-				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light cursor-pointer sm:mx-4 mb-2 sm:py-2" 
-					aria-label="Services" >
-					<Link to="services">Services</Link>
-				</div>
-				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light cursor-pointer sm:mx-4 mb-2 sm:py-2"
-					aria-label="Skills" >
-					<Link to="skills">Skills</Link>
-				</div>
-				<div className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light cursor-pointer sm:mx-4 mb-2 sm:py-2"
-					aria-label="Portfolio" >
-					<Link to="portfolio">Portfolio</Link>
-				</div>
+				{ navData.map((data, i) => (
+					<div key={`${i}}`} className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light cursor-pointer sm:mx-4 mb-2 sm:py-2" 
+						aria-label={data} >
+						<Link to={data.toLocaleLowerCase()} >{data}</Link>
+					</div>
+					))
+				}
 			</div>
 
 			{/* Header right section buttons */}
@@ -167,10 +145,12 @@ const Navbar = () => {
 			</div>
 		</div>
 		<div>
+			<>
 			{showModal ? (
 				<ContactUsModal onClose={showContactUsModal} onRequest={showContactUsModal} />
 			) : null}
 			{showModal ? showContactUsModal : null}
+			</>
 		</div>
 	</motion.nav>
   )

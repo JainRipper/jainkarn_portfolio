@@ -6,7 +6,6 @@ import ContainerBlock from "../components/ContainerBlock";
 // import LatestCode from "../components/LatestCode";
 import getLatestRepos from "../lib/getLatestRepos";
 import userData from "../constants/data";
-import AboutSection from "@/components/AboutSection"
 import HeroSection from "@/components/HeroSection";
 import ServiceSection from "@/components/ServiceSection"
 import SkillSection from "@/components/SkillSection"
@@ -25,7 +24,6 @@ export default function Home({ repositories }: Props) {
       <HeroSection />
       {/* <FavouriteProjects />
       <LatestCode repositories={repositories} /> */}
-      {/* <AboutSection /> */}
       <ServiceSection />
       <SkillSection />
       <PortfolioSection />

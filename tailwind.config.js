@@ -53,7 +53,25 @@ module.exports = {
         'fortfolio-project': "url('/images/project.svg')",
         // 'footer-texture': "url('/img/footer-texture.png')",
       },
-      screens: { sm: "600px", md: "768px", lg: "976px", xl: "1440pd" },
+      // screens: { sm: "600px", md: "768px", lg: "976px", xl: "1440pd" },
+      container: {
+        // you can configure the container to be centered
+        center: true,
+        // or have default horizontal padding
+        padding: '1rem',
+        // default breakpoints but with 40px removed
+        //
+        // notice how the color changes at 768px but
+        // the container size changes at 728px
+        screens: {
+          xs: '550px',
+          sm: '600px',
+          md: '728px',
+          lg: '984px',
+          xl: '1280px',
+          '2xl': '1496px',
+        },
+      },
       animation: {
         fadeIn: "fadeIn 1.5s",
         bounce:

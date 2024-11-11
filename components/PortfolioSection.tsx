@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from 'framer-motion';
 import { MdArrowOutward } from "react-icons/md";
@@ -21,7 +21,7 @@ const testimonials = {
   },
   carousal: [
     {
-      image: '/images/testimonial/nick_elith.jpeg',
+      image: '/images/testimonials/nick_elith.jpeg',
       name: 'Nick Elith',
       title:'Director of techNick Consulting Pty Ltd',
       quote:`I have no hesitation in recommending him for any engagement that requires a person of enthusiasm, honesty, willingness to work hard and IT savvy`
@@ -75,8 +75,32 @@ const portfolio = {
       skill: "UX/ UI Web development",
       title: "Website Design For Fashion Landing Page",
       details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "left",
+      image: "bg-[url('/images/projects/project08.svg')]",
+      link: ""
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Resume Page",
+      details: "I offer custom web design services to create a professional, interactive, and visually appealing Resume Page that showcases your skills, experience, and accomplishments in the best possible light. Whether you're a job seeker, freelancer, or professional looking to enhance your online presence, I can design and build a polished, user-friendly website that effectively represents your personal brand.",
       position: "right",
-      image: "bg-[url('/images/project01.svg')]",
+      image: "bg-[url('/images/projects/project07.svg')]",
+      link: "https://www.jainkarn.site/"
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Fashion Landing Page",
+      details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "left",
+      image: "bg-[url('/images/projects/project06.svg')]",
+      link: ""
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Fashion Landing Page",
+      details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "right",
+      image: "bg-[url('/images/projects/project05.svg')]",
       link: ""
     },
     {
@@ -84,7 +108,7 @@ const portfolio = {
       title: "Website Design For Fashion Landing Page",
       details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
       position: "left",
-      image: "bg-[url('/images/project02.svg')]",
+      image: "bg-[url('/images/projects/project04.svg')]",
       link: ""
     },
     {
@@ -92,19 +116,52 @@ const portfolio = {
       title: "Website Design For Fashion Landing Page",
       details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
       position: "right",
-      image: "bg-[url('/images/project03.svg')]",
+      image: "bg-[url('/images/projects/project03.svg')]",
+      link: ""
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Fashion Landing Page",
+      details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "left",
+      image: "bg-[url('/images/projects/project02.svg')]",
+      link: ""
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Fashion Landing Page",
+      details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "right",
+      image: "bg-[url('/images/projects/project01.svg')]",
       link: ""
     }
   ]
 }
 
 const PortfolioSection = () => {
+  const [ showItems, setShowItems] = useState(3);
+  const [ isLoading, setIsLoading] = useState(false);
+
+  const handleShowMore = () => {
+    setIsLoading(true);
+    setTimeout(() => { 
+      setIsLoading(false);
+      setShowItems(showItems + 3);
+    }, 1000);
+  }
+
+  const spinner = () => {
+    return (
+      <div className="lds-spinner scale-75"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    );
+  }
+
   // const { height, width } = useWindowDimensions();
   const renderChildrenView = (item: any ,index: number) => {    
     // Note: width: 600px -> conputedLeft: 600px, 470px -> 470px
     return (
       <div className='contentBox lg:flex xl:w-[600px] xl:h-[200px] lg:w-[470px] lg:h-[250px] md:h-[390px] items-center bg-white w-full h-full box-border p-4 font-inter text-base justify-between border border-black hover:bg-slate-200 text-black shadow-[0px_4px_3px_0px_#00000024] rounded-xl py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600' key={index}>
-        <div className='lg:w-1/3 mr-1 lg:mb-0 sm:mb-2 flex-none text-center'>
+        <div className='lg:w-1/3 sm:w-1/2 xs:w-1/3 sm:m-auto flex-none text-center'>
           <div 
             style={{backgroundImage:`url(${item.image})`}} 
             className={`imageStyle bg-center bg-cover ml-1 h-44 w-full rounded-xl`}/> 
@@ -136,7 +193,7 @@ const PortfolioSection = () => {
         </div>
         {/* Projects */}
         <div className="flex-col flex justify-center items-center pb-20">
-          { portfolio.projects.map((project: any, i: number) => (
+          { portfolio.projects.slice(0, showItems).map((project: any, i: number) => (
             <ThemedCardProject 
               key={`project-${i}`}
               skill={project.skills}
@@ -147,11 +204,16 @@ const PortfolioSection = () => {
               link={project.link}
             />
           ))}
-          <div className="text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer">
-            <Link to="services" aria-label="Services" className="w-6 px-6 py-5">
-              See More Project
-            </Link>
-          </div>
+          { isLoading ? 
+            <>
+              {spinner()}
+            </> : showItems < portfolio.projects.length ? 
+            <div className="text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer">
+              <Link to="" aria-label="Services" className="w-6 px-6 py-5" onClick={handleShowMore}>
+                See More Project
+              </Link>
+            </div> : <div></div>
+          }
         </div>
 
         {/* Testimonial */}

@@ -32,7 +32,7 @@ const ThemedCardProject = (props: Props) => {
             </div>
             <div className="mb-8 w-11/12">
               <a href={props.link} aria-label="View Project"
-                  className="font-inter text-base w-[30%] flex justify-between ml-auto items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600">
+                  className="font-inter lg:float-right m-auto text-base w-44 flex justify-between items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600">
                   <span className="text-sm sm:text-lg duration-100">
                     View Project
                   </span>
@@ -44,7 +44,7 @@ const ThemedCardProject = (props: Props) => {
       ): (
         // Left - Content
         <>
-          <div className="max-w-sm w-full lg:max-w-7xl flex mb-12 lg:flex-row md:flex-col-reverse">
+          <div className="fade-in-image max-w-sm w-full lg:max-w-7xl flex lg:flex-row flex-col-reverse">
             <div className="lg:border-b lg:border-r-0 lg:border-t lg:border-gray-400 lg:rounded-l-lg lg:rounded-r-none border border-t-0 rounded-b-lg border-gray-400 bg-white p-4 pl-10 flex flex-col justify-center leading-normal">
               <div className="mb-8 w-11/12">
                 <p className="text-sm flex items-center text-red-600 pb-5">
@@ -59,7 +59,7 @@ const ThemedCardProject = (props: Props) => {
               </div>
               <div className="mb-8 w-11/12">
                 <a href={props.link} aria-label="View Project"
-                    className="font-inter text-base w-[33%] flex justify-between  items-center border border-black rounded-b-lg bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600">
+                    className="font-inter text-base w-44 flex lg:float-left m-auto justify-between items-center border border-black rounded bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600">
                   <span className="text-sm sm:text-lg duration-100">
                     View Project
                   </span>

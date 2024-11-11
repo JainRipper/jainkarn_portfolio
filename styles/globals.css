@@ -164,6 +164,11 @@ a {
 	}
 }
 
+/* Image Card */
+.fade-in-image { 
+	animation: fadeIn 1s; 
+}
+
 /* Carousel */
 .carouselContainer {
 	width: 1245px;

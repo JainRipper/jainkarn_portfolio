@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from 'framer-motion';
 import { MdArrowOutward } from "react-icons/md";
@@ -21,16 +21,16 @@ const testimonials = {
   },
   carousal: [
     {
-      image: '/images/testimonial/nick_elith.jpeg',
+      image: '/images/testimonials/nick_elith.jpg',
       name: 'Nick Elith',
       title:'Director of techNick Consulting Pty Ltd',
-      quote:`I have no hesitation in recommending him for any engagement that requires a person of enthusiasm, honesty, willingness to work hard and IT savvy`
+      quote:`I have always found Jainkarn ('JK') to be considerate, thoughtful and organised. ‘JK’ has assisted me with several significant community work projects as well as discussions regarding optimising IT solutions. He has excellent initiative, learns quickly and is a definite team player. I have no hesitation in recommending him for any engagement that requires a person of enthusiasm, honesty, willingness to work hard and IT savvy.`
     },
     {
-      image:'https://picsum.photos/id/10/2500/1667',
-      name: 'Christian Smith',
-      title:'Manager Meta',
-      quote:'Kudos to Jainkarn for an outstanding job! Our site\'s aesthetics and user experience surpassed expectations.' 
+      image:'/images/testimonials/stanislav_moskalev.jpg',
+      name: 'Stanislav Moskalev',
+      title:'Director of Steel Timber Concrete (STC) Engineering',
+      quote:`We had a few challenges with the website, and Jainkarn (JK) really assisted as the professional consultant. He managed to explain in simple terms the functions of the front end and suggested a solution that achieved the outcome we wanted. We would definitely recommend JK—ask for his professional consult and just trust him and the process.`
     },
      {
       image:'https://picsum.photos/id/1000/2500/2500',
@@ -75,8 +75,32 @@ const portfolio = {
       skill: "UX/ UI Web development",
       title: "Website Design For Fashion Landing Page",
       details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "left",
+      image: "bg-[url('/images/projects/project08.svg')]",
+      link: ""
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Resume Page",
+      details: "I offer custom web design services to create a professional, interactive, and visually appealing Resume Page that showcases your skills, experience, and accomplishments in the best possible light. Whether you're a job seeker, freelancer, or professional looking to enhance your online presence, I can design and build a polished, user-friendly website that effectively represents your personal brand.",
       position: "right",
-      image: "bg-[url('/images/project01.svg')]",
+      image: "bg-[url('/images/projects/project07.svg')]",
+      link: "https://www.jainkarn.site/"
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Fashion Landing Page",
+      details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "left",
+      image: "bg-[url('/images/projects/project06.svg')]",
+      link: ""
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Fashion Landing Page",
+      details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "right",
+      image: "bg-[url('/images/projects/project05.svg')]",
       link: ""
     },
     {
@@ -84,7 +108,7 @@ const portfolio = {
       title: "Website Design For Fashion Landing Page",
       details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
       position: "left",
-      image: "bg-[url('/images/project02.svg')]",
+      image: "bg-[url('/images/projects/project04.svg')]",
       link: ""
     },
     {
@@ -92,28 +116,65 @@ const portfolio = {
       title: "Website Design For Fashion Landing Page",
       details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
       position: "right",
-      image: "bg-[url('/images/project03.svg')]",
+      image: "bg-[url('/images/projects/project03.svg')]",
+      link: ""
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Fashion Landing Page",
+      details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "left",
+      image: "bg-[url('/images/projects/project02.svg')]",
+      link: ""
+    },
+    {
+      skill: "UX/ UI Web development",
+      title: "Website Design For Fashion Landing Page",
+      details: "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores",
+      position: "right",
+      image: "bg-[url('/images/projects/project01.svg')]",
       link: ""
     }
   ]
 }
 
 const PortfolioSection = () => {
+  const [ showItems, setShowItems] = useState(3);
+  const [ isLoading, setIsLoading] = useState(false);
+
+  const handleShowMore = () => {
+    setIsLoading(true);
+    setTimeout(() => { 
+      setIsLoading(false);
+      setShowItems(showItems + 3);
+    }, 1000);
+  }
+
+  const spinner = () => {
+    return (
+      <div className="lds-spinner scale-75"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    );
+  }
+
+  const truncate = (str: string) => {
+    return (str.length > 180 ? str.substring(0, 180) + '...' : str);
+  }
+
   // const { height, width } = useWindowDimensions();
-  const renderChildrenView = (item: any ,index: number) => {    
+  const renderChildrenView = (item: any ,index: number) => {
     // Note: width: 600px -> conputedLeft: 600px, 470px -> 470px
     return (
-      <div className='contentBox lg:flex xl:w-[600px] xl:h-[200px] lg:w-[470px] lg:h-[250px] md:h-[390px] items-center bg-white w-full h-full box-border p-4 font-inter text-base justify-between border border-black hover:bg-slate-200 text-black shadow-[0px_4px_3px_0px_#00000024] rounded-xl py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600' key={index}>
-        <div className='lg:w-1/3 mr-1 lg:mb-0 sm:mb-2 flex-none text-center'>
+      <div className='contentBox lg:flex xl:w-[600px] xl:h-[200px] lg:w-[470px] lg:h-[250px] md:h-[415px] items-center bg-white w-full h-full box-border p-4 font-inter text-base justify-between border border-black hover:bg-slate-200 text-black shadow-[0px_4px_3px_0px_#00000024] rounded-xl py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600' key={index}>
+        <div className='lg:w-1/3 w-1/2 m-auto flex-none text-center'>
           <div 
             style={{backgroundImage:`url(${item.image})`}} 
-            className={`imageStyle bg-center bg-cover ml-1 h-44 w-full rounded-xl`}/> 
+            className={`imageStyle bg-center bg-cover ml-1 lg:h-44 h-36 w-full rounded-xl`}/> 
         </div>
         <div className='lg:w-2/3 md:px-3 md:[&>*]:pt-[5px] fontBox flex flex-col pl-3 justify-center whitespace-normal'>
           <p className='titleStyle text-xl leading-5 font-bold whitespace-pre-line tracking-wider'>{item.name}</p>
-          <p className='text-l '>{item.title}</p>
-          <div className="text-justify">
-            {item.quote}
+          <p className='testimonial-title text-md italic font-medium'>{item.title}</p>
+          <div className="tooltip text-justify md:text-md" tooltip={item.quote.length > 180 ? item.quote : false } tooltip-position="buttom">
+            {truncate(item.quote)}            
           </div>
         </div>
      </div>
@@ -123,7 +184,7 @@ const PortfolioSection = () => {
   return (
     <motion.section id="portfolio" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 		  transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-		  className="pt-15 pb-28">
+		  className="pt-15">
       <div className="items-center container">
         {/* Intro */}
         <div className="py-16 sm:flex-col text-center sm:justify-center mx-auto" >
@@ -136,7 +197,7 @@ const PortfolioSection = () => {
         </div>
         {/* Projects */}
         <div className="flex-col flex justify-center items-center pb-20">
-          { portfolio.projects.map((project: any, i: number) => (
+          { portfolio.projects.slice(0, showItems).map((project: any, i: number) => (
             <ThemedCardProject 
               key={`project-${i}`}
               skill={project.skills}
@@ -147,15 +208,20 @@ const PortfolioSection = () => {
               link={project.link}
             />
           ))}
-          <div className="text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer">
-            <Link to="services" aria-label="Services" className="w-6 px-6 py-5">
-              See More Project
-            </Link>
-          </div>
+          { isLoading ? 
+            <>
+              {spinner()}
+            </> : showItems < portfolio.projects.length ? 
+            <div className="text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer">
+              <Link to="" aria-label="Services" className="w-6 px-6 py-5" onClick={handleShowMore}>
+                See More Project
+              </Link>
+            </div> : <div></div>
+          }
         </div>
 
         {/* Testimonial */}
-        <div className="flex-col flex justify-center items-center pb-16 pt-20">
+        <div className="flex-col flex justify-center items-center pt-20">
           <div className="sm:flex-col text-center sm:justify-center sm:items-center container mx-auto mb-14" >
             <h1 className="font-archivo font-bold text-2xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
               {testimonials.intro.title}

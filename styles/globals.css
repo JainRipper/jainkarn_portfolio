@@ -26,6 +26,10 @@ body {
 	background: #0D2438;
 }
 
+.tooltip {
+	color: #0D2438;
+}
+
 footer {
 	background: #0D2438;
 }
@@ -205,6 +209,60 @@ a {
 	width: calc(100% - 100px - 5px);
 }
 
+/* Tooltip */
+  [tooltip]{
+	position:relative;
+	display:inline-block;
+  }
+  [tooltip]::before {
+	  content: "";
+	  position: absolute;
+	  top:-6px;
+	  left:50%;
+	  transform: translateX(-50%);
+	  border-width: 4px 6px 0 6px;
+	  border-style: solid;
+	  border-color: rgba(0,0,0,0.7) transparent transparent     transparent;
+	  z-index: 99;
+	  opacity:0;
+  }
+  
+  [tooltip-position='buttom']::before{
+	top: 80%;
+	margin-top:8px;
+	transform: translateX(-50%) translatey(-100%) rotate(-180deg)
+  }
+  
+  [tooltip]::after {
+	  content: attr(tooltip);
+	  position: absolute;
+	  left:25%;
+	  top:-6px;
+	  transform: translateX(-50%)   translateY(-100%);
+	  background: rgba(0,0,0,0.85);
+	  text-align: center;
+	  color: #fff;
+	  width: 163%;
+	  padding:4px 2px;
+	  font-size: 14px;
+	  min-width: 80px;
+	  border-radius: 5px;
+	  pointer-events: none;
+	  padding: 4px 4px;
+	  z-index:99;
+	  opacity:0;
+  }
+  [tooltip-position='buttom']::after{
+	top: 80%;
+	margin-top:8px;
+	transform: translateX(-50%) translateY(0%);
+  }
+  
+  [tooltip]:hover::after,
+  [tooltip]:hover::before {
+	 opacity:1
+  }
+
 /* Media Queries */
 @media screen and (max-width: 1280px) {
 	.controlRight {
@@ -213,38 +271,38 @@ a {
 	.controlLeft {
 		left: 27rem;
 	}
-  }
-
-  @media screen and (max-width: 1280px) {
-	/* .carouselContainer {
-		max-width: 840px;
-	} */
 	.controlRight, .controlLeft {
 		top: 20rem;
 	}
-	/* .controlLeft {
-		left: 23rem;
-	}
-	.controlRight {
-		right: 23rem;
-	} */
   }
 
+  /* MD */
   @media (min-width: 768px) and (max-width: 1023px) {
-    .carouselContainer {
+	.carouselContainer {
 		max-width: 650px;
 	}
 	.contentBox {
 		width: 302px;
 	}
 	.controlRight, .controlLeft {
-		top: 27rem;
+		top: 29rem;
 	}
 	.controlLeft {
 		left: 16rem;
 	}
 	.controlRight {
 		right: 16rem;
+	}
+	
+	[tooltip-position='buttom']::before, 
+	[tooltip-position='buttom']::after{
+		top: 24%;
+	}
+
+	[tooltip-position='buttom']::after{
+		/* font-size: 12px; */
+		width: 122%;
+		left: 50%;
 	}
 }
 /* SM */
@@ -264,6 +322,17 @@ a {
 	}
 	.controlLeft {
 		left: 13rem;
+	}
+
+	[tooltip-position='buttom']::before, 
+	[tooltip-position='buttom']::after{
+		/* top:30%; */
+	}
+
+	[tooltip-position='buttom']::after{
+		/* font-size: 12px; */
+		width: 100%;
+		left: 50%;
 	}
   }
 /* XS */

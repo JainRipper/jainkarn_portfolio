@@ -66,7 +66,7 @@ const ThemedCarousel = (props) => {
     {widthCarousel && 
       <div className="w-full h-full flex justify-center items-center">
         <div className='carouselContainer container relative'>
-          <div className="carouselArea h-auto relative overflow-hidden box-border whitespace-nowrap w-full">
+          <div className="carouselArea h-auto relative overflow-hidden box-border whitespace-nowrap w-full xl:min-h-[25rem] lg:min-h-[28rem] min-h-[35rem]">
             <div style={conputedLeft()} className="carouselPosts">
               {props.dataArray.map((imgaeUrl,index)=>{
                 return(

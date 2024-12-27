@@ -51,10 +51,10 @@ const ServicesSection = () => {
   return (
     <motion.section id="services" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 		  transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-		  className="py-20 px-28 bg-white">
-      <div className="items-center container">
+		  className="py-20 bg-white">
+      <div className="items-center container px-28">
         {/* Intro */}
-        <div className="pb-16 sm:flex sm:justify-between sm:items-center container mx-auto" >
+        <div className="mb-16 sm:flex sm:justify-between sm:items-center container mx-auto" >
           <div className="w-full md:w-1/2 text-left">
             <h1 className="font-archivo font-bold text-2xl md:w-3/4 lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
               {data.intro.heading}

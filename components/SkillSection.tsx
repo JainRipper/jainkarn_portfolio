@@ -52,7 +52,7 @@ const data = {
       color: "bg-indigo-300"
     },
     {
-      skill: "Java Script",
+      skill: "JavaScript",
       icon: "/icons/skills-java_script.svg",
       color: "bg-lime-400"
     },
@@ -68,21 +68,20 @@ const SkillSection = () => {
   return (
     <motion.section id="skills" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
       transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-      className="mt-6 md:mt-20 px-28 pb-20" >
-			<div className="pb-16 sm:flex sm:justify-between container">
-        {/* Intro */}
-        <div className="w-full md:w-1/2 text-left">
-          <div className="pb-10">
-            <h1 className="font-archivo font-bold text-2xl lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
-              { data.intro.heading }
-            </h1>
-            <p className="mt-4 text-base md:text-lg sm:text-left leading-normal text-gray-500 dark:text-gray-200" >
-              { data.intro.details }
-            </p>
-          </div>
-
-          {/* Skills set */}
-          <div className="md:flex flex-wrap">
+      className="my-20 container relative" >
+      {/* Intro */}
+      <div className="pb-10 lg:w-3/5">
+        <h1 id="skill-title" className="font-archivo font-bold text-3xl lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
+          { data.intro.heading }
+        </h1>
+        <p className="mt-4 text-base md:text-lg sm:text-left leading-normal text-gray-500 dark:text-gray-200" >
+          { data.intro.details }
+        </p>
+      </div>
+      {/* Skills set */}
+			<div className="pb-16 sm:flex sm:justify-between">
+        <div className="w-full md:w-3/5 lg:mr-7 text-left xl:pl-8">
+          <div className="md:flex md:flex-wrap">
             { data.skills.map((skill: any, i: number) => (
               <ThemedCardIcon 
                 key={i}
@@ -95,7 +94,7 @@ const SkillSection = () => {
         </div>
 
         {/* Image */}
-        <div className="w-full md:w-1/2 text-right">
+        <div className="w-full md:w-2/5 m-auto">
           <picture className="flex justify-center">
             <ThemedImage
               imgLight='/images/headshot-dark.png'
@@ -103,6 +102,8 @@ const SkillSection = () => {
               alt="My image"
               width={420}
               height={420}
+              id="image-skill"
+              class="lg:absolute lg:top-0 lg:right-0 lg:mr-4 lg:w-[35%] w-[95%]"
             />
           </picture>
         </div>

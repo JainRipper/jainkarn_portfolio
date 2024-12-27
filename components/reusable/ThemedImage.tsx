@@ -7,6 +7,8 @@ interface Props {
   imgDark: string;
   width: number;
   height: number;
+  id: string;
+  class: string;
   alt: string;
 }
 
@@ -26,7 +28,7 @@ const ThemedImage = (props: Props) => {
       break
   }
 
-  return <Image src={src} width={props.width} height={props.height} alt={props.alt} />
+  return <Image src={src} width={props.width} height={props.height} id={props.id} alt={props.alt} className={props.class}/>
 }
 
 export default ThemedImage

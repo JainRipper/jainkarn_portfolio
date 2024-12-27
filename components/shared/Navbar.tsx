@@ -54,7 +54,8 @@ const Navbar = () => {
 	}
 
   return (
-    <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="nav" className="container mx-auto px-28" >
+    <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="nav" className="container mx-auto" >
+		{/* container mx-auto px-28 */}
 		{/* Header */}
 		<div className="z-10 xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6">
 			{/* Header menu links and small screen hamburger menu */}

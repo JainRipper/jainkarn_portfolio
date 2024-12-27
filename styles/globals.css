@@ -173,6 +173,11 @@ a {
 	animation: fadeIn 1s; 
 }
 
+/* Skills */
+#image-skill {
+	transition: .5s;
+}
+
 /* Carousel */
 .carouselContainer {
 	width: 1245px;
@@ -240,7 +245,7 @@ a {
 	  top:-6px;
 	  transform: translateX(-50%)   translateY(-100%);
 	  background: rgba(0,0,0,0.85);
-	  text-align: center;
+	  text-align: justify;
 	  color: #fff;
 	  width: 163%;
 	  padding:4px 2px;
@@ -264,7 +269,10 @@ a {
   }
 
 /* Media Queries */
-@media screen and (max-width: 1280px) {
+@media (min-width: 1040px) and (max-width: 1279px) {
+	#image-skill {
+		width: 35%;
+	}
 	.controlRight {
 		right: 27rem;
 	}
@@ -276,8 +284,20 @@ a {
 	}
   }
 
+  @media (min-width: 1024px) and (max-width: 1140px) {
+	.skill-card {
+		padding: 6px !important;
+	}
+  }
+
   /* MD */
-  @media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+	#image-skill {
+		width: 80%;
+	}
+	#skill-title {
+		font-size: 2.5rem;
+	}
 	.carouselContainer {
 		max-width: 650px;
 	}
@@ -324,11 +344,6 @@ a {
 		left: 13rem;
 	}
 
-	[tooltip-position='buttom']::before, 
-	[tooltip-position='buttom']::after{
-		/* top:30%; */
-	}
-
 	[tooltip-position='buttom']::after{
 		/* font-size: 12px; */
 		width: 100%;
@@ -336,6 +351,16 @@ a {
 	}
   }
 /* XS */
+@media screen and (max-width: 639px) {
+	#image-skill {
+		margin-top: 2rem;
+		width: 65%;
+	}
+	.skill-card-container {
+		/* width: 50%;
+		display: inline-block; */
+	}
+  }
 @media screen and (max-width: 550px) {
 	.carouselContainer {
 		max-width: 375px;

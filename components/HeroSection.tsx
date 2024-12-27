@@ -16,8 +16,8 @@ const HeroSection = () => {
   return (
     <motion.section id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 		transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-		className="mt-6 md:mt-20 px-28 pb-20" >
-		<div className="container flex flex-col sm:justify-between items-center sm:flex-row ">
+		className="mt-6 md:mt-20 container mb-20" >
+		<div className=" flex flex-col sm:justify-between items-center sm:flex-row ">
 			<div className="w-full md:w-1/2 text-left">
 				<motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 					transition={{

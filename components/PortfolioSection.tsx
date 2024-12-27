@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import { motion } from 'framer-motion';
-import { MdArrowOutward } from "react-icons/md";
-// import Link from "next/link"
-import SlideUp from "./SlideUp"
 import { Link } from "react-scroll/modules"
 import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
 import project from '../public/images/project.svg';
@@ -13,6 +9,7 @@ import img10 from '../public/img_10.jpg';
 import ThemedCarousel from './reusable/ThemedCarousel';
 import ThemedCardProject from './reusable/ThemedCardProject';
 import useWindowDimensions from './reusable/useWindowDimensions';
+import { truncation } from './reusable/features';
 
 const testimonials = {
   intro: {
@@ -156,10 +153,6 @@ const PortfolioSection = () => {
     );
   }
 
-  const truncate = (str: string) => {
-    return (str.length > 180 ? str.substring(0, 180) + '...' : str);
-  }
-
   // const { height, width } = useWindowDimensions();
   const renderChildrenView = (item: any ,index: number) => {
     // Note: width: 600px -> conputedLeft: 600px, 470px -> 470px
@@ -174,7 +167,7 @@ const PortfolioSection = () => {
           <p className='titleStyle text-xl leading-5 font-bold whitespace-pre-line tracking-wider'>{item.name}</p>
           <p className='testimonial-title text-md italic font-medium'>{item.title}</p>
           <div className="tooltip text-justify md:text-md" tooltip={item.quote.length > 180 ? item.quote : false } tooltip-position="buttom">
-            {truncate(item.quote)}            
+            {truncation(item.quote, 180)}            
           </div>
         </div>
      </div>
@@ -188,10 +181,10 @@ const PortfolioSection = () => {
       <div className="items-center container">
         {/* Intro */}
         <div className="py-16 sm:flex-col text-center sm:justify-center mx-auto" >
-          <h1 className="font-archivo font-bold text-2xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
+          <h1 className="font-archivo font-bold text-2xl text-4xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
             {portfolio.intro.title}
           </h1>
-          <p className="mt-4  text-base md:text-lg leading-normal text-gray-500 dark:text-gray-200" >
+          <p className="mt-4 text-lg leading-normal text-gray-500 dark:text-gray-200" >
             {portfolio.intro.details}
           </p>        
         </div>
@@ -200,7 +193,7 @@ const PortfolioSection = () => {
           { portfolio.projects.slice(0, showItems).map((project: any, i: number) => (
             <ThemedCardProject 
               key={`project-${i}`}
-              skill={project.skills}
+              skill={project.skill}
               title={project.title}
               details={project.details}
               position={project.position}
@@ -226,7 +219,7 @@ const PortfolioSection = () => {
             <h1 className="font-archivo font-bold text-2xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
               {testimonials.intro.title}
             </h1>
-            <p className="mt-4 text-base md:text-lg leading-normal text-gray-500 dark:text-gray-200" >
+            <p className="mt-4 text-lg leading-normal text-gray-500 dark:text-gray-200" >
               {testimonials.intro.details}
             </p>        
           </div>

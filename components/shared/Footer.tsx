@@ -38,7 +38,7 @@ const footer = {
 
 const Footer = () => {
   return (
-    <footer className="pt-20 lg:px-10">
+    <footer className="pt-20">
       <div className="items-center container">
         <div className="md:flex sm:justify-between container mx-auto" >
           {/* Intro - Left */}

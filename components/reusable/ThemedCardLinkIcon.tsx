@@ -12,10 +12,10 @@ interface Props {
 
 const ThemedCardLinkIcon = (props: Props) => {
 	return (
-    <div className="p-4 max-w-sm duration-300 hover:-translate-y-1">
-      <div className={`flex h-full dark:bg-gray-800 p-6 flex-col text-base font-inter border border-black ${props.color} text-black shadow-[5px_5px_0px_0px_#1a202c] rounded-lg duration-500 focus:ring-1 focus:ring-slate-600`}>
-        <div className="flex items-center pb-16">
-          <Image src={props.icon} className="w-14"
+    <div className="p-4 w-full md:w-1/3 md:max-w-96 duration-300 hover:-translate-y-1">
+      <div className={`flex h-full dark:bg-gray-800 p-4 md:p-6 md:flex-col text-base font-inter border border-black ${props.color} text-black shadow-[5px_5px_0px_0px_#1a202c] rounded-lg duration-500 focus:ring-1 focus:ring-slate-600`}>
+        <div className="flex items-start md:items-center mr-4 md:pb-16">
+          <Image src={props.icon} className="w-20 md:w-14 service-icon"
             alt={props.service} width={150} height={150} />
         </div>
         <div className="flex flex-col justify-between flex-grow">
@@ -26,7 +26,7 @@ const ThemedCardLinkIcon = (props: Props) => {
             {props.details}
           </p>
           <a href={props.link}
-            className="font-inter text-base w-1/2 flex justify-between items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600"
+            className="font-inter text-base max-w-40 hidden md:flex justify-between items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-2.5 duration-500 focus:ring-1 focus:ring-slate-600"
             aria-label="Download Resume" >
             <span className="text-sm sm:text-lg duration-100">
               Contact Us

@@ -291,12 +291,14 @@ a {
   }
 
   /* MD */
+  @media (min-width: 984px) and (max-width: 1023px) {
+	#img-hero {
+		width: 80%;
+	}
+}
 @media (min-width: 768px) and (max-width: 1023px) {
 	#image-skill {
 		width: 80%;
-	}
-	#skill-title {
-		font-size: 2.5rem;
 	}
 	.carouselContainer {
 		max-width: 650px;
@@ -354,7 +356,7 @@ a {
 @media screen and (max-width: 639px) {
 	#image-skill {
 		margin-top: 2rem;
-		width: 65%;
+		max-width: 70%;
 	}
 	.skill-card-container {
 		/* width: 50%;
@@ -362,6 +364,9 @@ a {
 	}
   }
 @media screen and (max-width: 550px) {
+	.service-icon {
+		min-width: 3rem;
+	}
 	.carouselContainer {
 		max-width: 375px;
 	}

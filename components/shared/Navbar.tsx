@@ -93,7 +93,7 @@ const Navbar = () => {
 			</div>
 
 			{/* Header links small screen */}
-			<div className={showMenu ? 'block m-0 sm:ml-4 sm:mt-3 md:flex px-5 py-3 sm:p-0 justify-between items-center shadow-lg sm:shadow-none' : 'hidden' } >
+			<div className={showMenu ? 'block m-0 sm:ml-4 bg-white sm:mt-3 md:flex px-5 py-3 sm:p-0 justify-between items-center shadow-lg sm:shadow-none' : 'hidden' } >
 				{ navData.map((data, i) => (
 					<div key={`${data}-${i}}`} className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 mb-2 sm:py-2">
 						<Link to={data.toLocaleLowerCase()} aria-label={data}>

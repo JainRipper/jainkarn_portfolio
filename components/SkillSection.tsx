@@ -71,7 +71,7 @@ const SkillSection = () => {
       className="my-20 container relative" >
       {/* Intro */}
       <div className="pb-10 lg:w-3/5">
-        <h1 id="skill-title" className="font-archivo font-bold text-3xl lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
+        <h1 id="skill-title" className="font-archivo font-bold text-4xl lg:text-5xl lg:text-left text-center text-ternary-dark dark:text-primary-light" >
           { data.intro.heading }
         </h1>
         <p className="mt-4 text-base md:text-lg sm:text-left leading-normal text-gray-500 dark:text-gray-200" >

@@ -17,8 +17,8 @@ const HeroSection = () => {
     <motion.section id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 		transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
 		className="mt-6 md:mt-20 container mb-20" >
-		<div className=" flex flex-col sm:justify-between items-center sm:flex-row ">
-			<div className="w-full md:w-1/2 text-left">
+		<div className="flex flex-col sm:justify-between items-center sm:flex-row ">
+			<div className="w-full sm:w-1/2 text-left">
 				<motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
 					transition={{
 						ease: 'easeInOut',
@@ -34,7 +34,7 @@ const HeroSection = () => {
 						duration: 0.9,
 						delay: 0.2,
 					}}
-					className="font-archivo font-bold text-2xl md:w-3/4 lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
+					className="font-archivo font-bold text-4xl w-full lg:w-3/4 lg:text-5xl sm:text-left text-ternary-dark dark:text-primary-light" >
 					{data.duties}
 				</motion.h1>
 				<motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
@@ -54,15 +54,15 @@ const HeroSection = () => {
 					}}
 					className="flex mt-12" >						
 					<div className="text-base font-inter border border-black bg-amber-400 hover:bg-amber-500 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 duration-500 focus:ring-1 focus:ring-slate-600 cursor-pointer">
-						<Link to="services" aria-label="Services" className="w-6 px-6 py-5">
+						<Link to="services" aria-label="Services" className="md:px-6 px-8 font-medium sm:px-4 py-5">
 							Let&apos;s Start
 						</Link>
 					</div>
 					<a download="Jainkarn-Resume.pdf" href="/files/Jainkarn-Resume.pdf"
-						className="ml-5 font-inter text-base flex justify-center items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 px-4 duration-500 focus:ring-1 focus:ring-slate-600"
+						className="ml-5 font-inter text-base flex justify-center items-center border border-black bg-white hover:bg-slate-200 text-black shadow-[5px_5px_0px_0px_#1a202c] rounded py-2.5 md:px-6 px-8 sm:px-4 duration-500 focus:ring-1 focus:ring-slate-600"
 						aria-label="Download Resume" >
 						<FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 h-5 w-5 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
-						<span className="text-sm sm:text-lg duration-100">
+						<span className="text-sm sm:text-lg duration-100 font-medium">
 							Resume
 						</span>
 					</a>
@@ -70,8 +70,8 @@ const HeroSection = () => {
 			</div>
 			<motion.div initial={{ opacity: 0, y: -180 }} animate={{ opacity: 1, y: 0 }}
 				transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-				className="w-full sm:w-1/2 text-right mt-8 sm:mt-0" >				
-				<picture className="float-right">
+				className="w-full sm:w-1/2 text-right pt-8 sm:pt-0 sm:pl-4 m-auto max-w-96 sm:max-w-full">				
+				<picture className="sm:float-right w-full lg:w-[80%]" id="img-hero">
 					<ThemedImage
 						imgLight='/images/headshot-light.png'
 						imgDark='/images/headshot-dark.png'

@@ -181,7 +181,7 @@ const PortfolioSection = () => {
       <div className="items-center container">
         {/* Intro */}
         <div className="py-16 sm:flex-col text-center sm:justify-center mx-auto" >
-          <h1 className="font-archivo font-bold text-2xl text-4xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
+          <h1 className="font-archivo font-bold text-4xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
             {portfolio.intro.title}
           </h1>
           <p className="mt-4 text-lg leading-normal text-gray-500 dark:text-gray-200" >
@@ -215,8 +215,8 @@ const PortfolioSection = () => {
 
         {/* Testimonial */}
         <div className="flex-col flex justify-center items-center pt-20">
-          <div className="sm:flex-col text-center sm:justify-center sm:items-center container mx-auto mb-14" >
-            <h1 className="font-archivo font-bold text-2xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
+          <div className="sm:flex-col text-center container mx-auto mb-14" >
+            <h1 className="font-archivo font-bold text-4xl lg:text-5xl text-ternary-dark dark:text-primary-light" >
               {testimonials.intro.title}
             </h1>
             <p className="mt-4 text-lg leading-normal text-gray-500 dark:text-gray-200" >
